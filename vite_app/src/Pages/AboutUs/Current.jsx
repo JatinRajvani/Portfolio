@@ -158,7 +158,7 @@ const CurrentStatusSection = ({ id }) => {
     {
       icon: <LuMonitor size={28} />,
       title: "Building Real-World Websites",
-      description: "With my full-stack knowledge, I started creating real-world projects such as **Homy**. This experience allowed me to apply my skills in **frontend, backend, and database integration**, bringing complete websites to life from scratch."
+      description: "With my full-stack knowledge, I began building real-world projects such as **Homy**, where I applied my skills in frontend, backend, and database integration to bring complete websites to life from scratch. This journey not only gave me practical experience in developing end-to-end solutions but also fueled my passion for exploring new technologies. I’m continuously working on **new projects**, expanding my skill set, and staying up to date with the latest tools and frameworks to **keep improving** as a developer"
     }
   ];
 
