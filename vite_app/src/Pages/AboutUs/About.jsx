@@ -95,7 +95,7 @@ const About = () => {
         {/* Enhanced Hero Section */}
         <section 
           ref={heroRef}
-          className="w-full min-h-screen text-white px-6 md:px-3 pt-0 pb-0 flex flex-col items-center justify-center relative overflow-hidden"
+          className="w-full min-h-screen  text-white px-6 md:px-3 pt-0 pb-0 flex flex-col items-center justify-center relative overflow-hidden "
         >
           {/* Background decorative elements */}
           <div className="absolute inset-0 overflow-hidden">
@@ -212,11 +212,11 @@ const About = () => {
         </section>
 
         {/* Your existing sections remain unchanged */}
-        <section className="w-full min-h-screen text-white px-6 md:px-3 pt-0 pb-20 flex flex-col justify-center">
+        <section className="w-full min-h-screen text-white pt-10 px-6 md:px-3 pt-0 pb-10 flex flex-col justify-center">
           <CurrentStatusSection />
         </section>
 
-        <section>
+        <section className="pb-10">
           <EducationSection />
         </section>
 

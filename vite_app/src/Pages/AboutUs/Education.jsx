@@ -123,35 +123,62 @@ import { GraduationCap } from "lucide-react";
 const educationData = [
   {
     degree: "B.Tech in Computer Science",
-    university: "XYZ Institute of Technology",
-    location: "New Delhi, India",
-    duration: "Aug 2023 – May 2027",
+    university: "Rai University x CodingGita",
+    location: "Ahmedabad, Gujarat",
+    duration: "Aug 2024 – May 2028",
     highlights: [
-      "Relevant Courses: DSA, Web Development, DBMS, OS",
-      "Hackathon Winner – CodeStorm 2024",
-      "Built 'Homy' – Hostel Booking MERN App"
+      "Relevant Courses: DSA, Web Development, DBMS",
+      // "Hackathon Winner – CodeStorm 2024",
+      "Built 'Homy' – Hostel Booking MERN App , Attendance and Payroll Management App"
     ],
   },
   {
     degree: "Higher Secondary (12th), Science Stream",
-    university: "ABC Public School",
-    location: "Patna, Bihar",
-    duration: "Apr 2021 – Mar 2023",
+    university: "BKKPSM School Palanpur",
+    location: "Palanpur , Gujarat",
+    duration: "Apr 2022 – Mar 2024",
     highlights: [
-      "CBSE Board – 89%",
-      "Subjects: Physics, Chemistry, Math, CS",
-      "School Coding Club – Lead Organizer"
+      "Percentage: Board – 69%",
+      "Subjects: Physics, Chemistry, Math",
     ],
   },
+    {
+    degree: "Secondary (10th)",
+    university: "BKKPSM School Palanpur",
+    location: "Palanpur , Gujarat",
+    duration: "Apr 2020 – Mar 2022",
+    highlights: [
+      "Percentage: Board – 82%",
+    ],
+  }
 ];
 
 const EducationSection = () => {
   return (
     
-<section id="education" className="py-16 bg-transparent">
+<section id="education" className="py-0 bg-transparent">
   <div className="max-w-5xl px-3 mx-auto"> {/* <-- Added mx-auto here */}
-    <h2 className="text-4xl font-bold mb-12 text-center text-yellow-400">🎓 Education</h2> {/* <-- Made heading center aligned */}
+        <motion.div
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }} // animates only once when in view
+      className="mb-12 text-center"
+    >
+      <h2 className="text-4xl font-bold text-yellow-400 relative pb-5">
+        🎓 Education
+      </h2>
 
+      {/* Animated underline */}
+      <motion.div
+        className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full mx-auto mt-2"
+        initial={{ width: 0 }}
+        whileInView={{ width: "250px" }}
+        transition={{ duration: 1, delay: 0.5 }}
+        viewport={{ once: true }}
+      />
+    </motion.div> {/* <-- Made heading center aligned */}
+  
     <div className="relative pl-10 space-y-12">
       {educationData.map((item, index) => (
         <motion.div

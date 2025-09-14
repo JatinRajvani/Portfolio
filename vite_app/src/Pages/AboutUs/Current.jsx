@@ -235,9 +235,9 @@ const CurrentStatusSection = ({ id }) => {
               animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
               transition={{ duration: 0.6, delay: 1.5 }}
             >
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FFCB22] to-[#FFB800] flex items-center justify-center shadow-lg shadow-[#FFCB22]/20">
+              {/* <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#FFCB22] to-[#FFB800] flex items-center justify-center shadow-lg shadow-[#FFCB22]/20">
                 <Trophy className="w-10 h-10 text-black" />
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>

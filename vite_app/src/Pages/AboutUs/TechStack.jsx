@@ -160,9 +160,40 @@ const TechStack = () => {
   return (
     <section className="w-full py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl font-bold text-yellow-400 mb-10 text-center">
-          Tech Stack
-        </h2>
+    <motion.div
+      className="text-center mb-12"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      viewport={{ once: true }}
+    >
+      {/* Heading */}
+      <motion.h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-6 relative">
+        <span className="text-[#FFCB22] text-6xl drop-shadow-lg">Tech</span>
+        <span className="text-white text-3xl md:text-4xl lg:text-6xl"> Stack</span>
+      </motion.h2>
+
+      {/* Description */}
+      <motion.p
+        className="text-gray-300 max-w-3xl text-center text-lg leading-relaxed mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        viewport={{ once: true }}
+      >
+        The tools, technologies, and frameworks I use to design, build, and
+        deploy powerful web applications.
+      </motion.p>
+
+      {/* Decorative underline */}
+      <motion.div
+        className="mt-8 h-1 bg-gradient-to-r from-transparent via-[#FFCB22] to-transparent rounded-full mx-auto"
+        initial={{ width: 0 }}
+        whileInView={{ width: "200px" }}
+        transition={{ duration: 1, delay: 0.6 }}
+        viewport={{ once: true }}
+      />
+    </motion.div>
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={containerVariants}
