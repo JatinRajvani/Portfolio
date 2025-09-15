@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home/HomePage';
 import Sidebar from './Components/Sidebar';
 import StarField from './Components/StarsFile.jsx';
-import MainProject from './Pages/Projects/mainproject.jsx';
+import MainProject from "./Pages/Projects/Mainproject.jsx";
 import Maincertificatesection from './Pages/certificates/maincertificate.jsx';
 import Maincontactsection from './Pages/Contact/Maincontact.jsx';
 import MainResumePage from './Pages/Resume/Mainresume.jsx';
