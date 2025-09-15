@@ -5,29 +5,29 @@ import TiltedCard from "../../Components/Design/TitleCard.jsx";
 
 const projects = [
   {
-    title: "Hostel Finder",
+    title: "Attendance and Payroll Management App",
     description:
-      "A web app to find hostels, PGs, and shared apartments with full detail pages.",
+      "A full-stack web application for managing employee attendance, leaves, holidays, and payroll processing.",
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
-    img: "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=800&q=80",
-    github: "https://github.com/yourusername/hostel-finder",
-    live: "https://your-live-demo-link.com",
+    img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757874895/AP2_rkekgb.png",
+    github: "https://github.com/aryapatel23/Attendance-and-Payroll-Management",
+    live: "https://attendance-and-payroll-management.vercel.app/",
     category: "Fullstack",
   },
   {
-    title: "Tiffin Service",
+    title: "Homy",
     description:
       "A platform for students and professionals to subscribe to homemade meal plans.",
     tech: ["Next.js", "Express", "MySQL"],
-    img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757956095/20250915_2230_Homy_App_Features_remix_01k5751pnwe3293hvc24xw7w2x_3_y2tkj4.png",
     github: "https://github.com/yourusername/tiffin-service",
     live: "https://your-live-demo-link.com",
     category: "Fullstack",
   },
   {
-    title: "Typing Test App",
+    title: "EcoHubs",
     description:
-      "A fast typing test app with random meaningful sentences and leaderboard.",
+      "Ecommerce Website for second-hand products with authentication and cart functionality.",
     tech: ["React", "Firebase"],
     img: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&q=80",
     github: "https://github.com/yourusername/typing-test",
@@ -35,7 +35,7 @@ const projects = [
     category: "Frontend",
   },
   {
-    title: "UI Kit Design",
+    title: "Rental Management",
     description: "A modern UI kit built in Figma and implemented in React.",
     tech: ["Figma", "React", "Tailwind"],
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
@@ -44,7 +44,7 @@ const projects = [
     category: "UI",
   },
   {
-    title: "Portfolio Website",
+    title: "Youtube Clone",
     description:
       "Personal portfolio website with smooth animations and responsive design.",
     tech: ["Next.js", "Tailwind", "Framer Motion"],
@@ -54,7 +54,7 @@ const projects = [
     category: "Frontend",
   },
   {
-    title: "E-commerce Store",
+    title: "Amazon Clone",
     description:
       "A complete online store with cart, checkout, and admin dashboard.",
     tech: ["React", "Redux", "Node.js", "MongoDB"],
@@ -64,7 +64,7 @@ const projects = [
     category: "Fullstack",
   },
   {
-    title: "Blog Platform",
+    title: "Digital Clock",
     description:
       "A blogging platform where users can create, edit, and comment on articles.",
     tech: ["Next.js", "Supabase", "Tailwind"],
@@ -74,7 +74,7 @@ const projects = [
     category: "Fullstack",
   },
   {
-    title: "Weather App",
+    title: "Spotify Clone",
     description:
       "A weather forecasting app using OpenWeather API with sleek UI.",
     tech: ["React", "API", "Tailwind"],
@@ -84,7 +84,7 @@ const projects = [
     category: "Frontend",
   },
   {
-    title: "Task Manager",
+    title: "Skills-Swap",
     description:
       "A task management app with drag-and-drop functionality and team collaboration.",
     tech: ["React", "Firebase", "Tailwind"],
@@ -92,16 +92,6 @@ const projects = [
     github: "https://github.com/yourusername/task-manager",
     live: "https://your-live-demo-link.com",
     category: "Fullstack",
-  },
-  {
-    title: "Music Player",
-    description:
-      "A modern music player with playlists, search, and animations.",
-    tech: ["React", "Tailwind", "Framer Motion"],
-    img: "https://images.unsplash.com/photo-1511376777868-611b54f68947?w=800&q=80",
-    github: "https://github.com/yourusername/music-player",
-    live: "https://your-live-demo-link.com",
-    category: "Frontend",
   },
 ];
 
