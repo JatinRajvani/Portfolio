@@ -8,28 +8,126 @@ const projects = [
     title: "Attendance and Payroll Management App",
     description:
       "A full-stack web application for managing employee attendance, leaves, holidays, and payroll processing.",
+    briefdescription: "A full-stack web application designed to simplify employee management. It provides separate dashboards for HR/Admin and Employees, ensuring smooth handling of attendance, leave requests, holidays, and payroll generation. The system automates salary calculations, reduces manual errors, and improves workforce efficiency.",  
+        techindetails:[ "React (Vite)",
+    "Tailwind CSS",
+    "Redux Toolkit",
+    "Framer Motion",
+    "Node.js",
+    "Express.js",
+    "MongoDB (Mongoose)",
+    "JWT Authentication",
+    "Multer",
+    "Cloudinary (for file uploads)",
+    "PDFKit / ReportLab"],
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757874895/AP2_rkekgb.png",
     github: "https://github.com/aryapatel23/Attendance-and-Payroll-Management",
     live: "https://attendance-and-payroll-management.vercel.app/",
     category: "Fullstack",
+    features: [
+      {
+        role: "👨‍💼 HR/Admin",
+        items: [
+          "Manage employee profiles (Add, Edit, Delete)",
+          "Track daily/monthly attendance",
+          "Approve/Reject leave requests",
+          "Manage holidays via calendar",
+          "Generate & manage payroll (salary slips, deductions, leaves, bonuses)",
+          "Export salary slips in PDF format"
+        ]
+      },
+      {
+        role: "👩‍💻 Employee",
+        items: [
+          "View & update profile",
+          "Mark daily attendance",
+          "Apply for leave",
+          "View holiday calendar",
+          "View monthly payroll & download salary slips"
+        ]
+      }
+    ],
+    startDate:"June 2025",
+    endDate:"July 2025",
+    duration:"1 Month",
+    teamSize:"2",
+    status:"Completed"
+
   },
-  {
-    title: "Homy",
-    description:
-      "A platform for students and professionals to subscribe to homemade meal plans.",
-    tech: ["Next.js", "Express", "MySQL"],
-    img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757956095/20250915_2230_Homy_App_Features_remix_01k5751pnwe3293hvc24xw7w2x_3_y2tkj4.png",
-    github: "https://github.com/yourusername/tiffin-service",
-    live: "https://your-live-demo-link.com",
-    category: "Fullstack",
-  },
+{
+  title: "Homy – Hostel & Lifestyle Platform",
+  description:
+    "A full-stack platform that helps students, working professionals, and travelers find suitable hostels, PGs, homes, meals, transportation, and a community to connect with others.",
+  briefdescription:
+    "Homy is designed to make city living easier for students and professionals. It provides a one-stop solution to discover hostels/PGs with detailed information, book homemade meal services, explore transportation options, and connect with others in the community. Each hostel has a dedicated detail page showcasing pricing, amenities, and availability.",
+  techindetails: [
+    "React (Vite)",
+    "Tailwind CSS",
+    "Redux Toolkit",
+    "Framer Motion",
+    "Node.js",
+    "Express.js",
+    "MongoDB (Mongoose)",
+    "JWT Authentication",
+    "Multer",
+    "Cloudinary (for images)",
+    "RESTful API"
+  ],
+  tech: ["React", "Tailwind", "Node.js", "MongoDB"],
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757956095/20250915_2230_Homy_App_Features_remix_01k5751pnwe3293hvc24xw7w2x_3_y2tkj4.png", // replace with real banner
+  github: "https://github.com/yourusername/homy",
+  live: "https://homy-website.vercel.app/",
+  category: "Fullstack",
+  features: [
+    {
+      role: "🏠 Hostel/PG Listings",
+      items: [
+        "Search and filter hostels/PGs by price, location, and facilities",
+        "Dedicated detail pages with full hostel information",
+        "View room images and amenities",
+        "Check availability and contact hostel owners"
+      ]
+    },
+    {
+      role: "🍱 Meal Services",
+      items: [
+        "Discover homemade tiffin services",
+        "View weekly/monthly meal plans",
+        "Ratings & reviews for meal providers",
+        "Subscription options for meals"
+      ]
+    },
+    {
+      role: "🚌 Transportation",
+      items: [
+        "Browse available local transport services",
+        "Find shuttle/bus services near hostels",
+        "View routes and pricing"
+      ]
+    },
+    {
+      role: "👥 Community",
+      items: [
+        "Join community discussions",
+        "Post and respond to queries",
+        "Connect with fellow students and professionals"
+      ]
+    }
+  ],
+  startDate: "March 2025",
+  endDate: "May 2025",
+  duration: "2 Months",
+  teamSize: "2",
+  status: "In Progress"
+}
+,
   {
     title: "EcoHubs",
     description:
       "Ecommerce Website for second-hand products with authentication and cart functionality.",
     tech: ["React", "Firebase"],
-    img: "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=800&q=80",
+    img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758051396/ecohubsimg_zzaglv.png",
     github: "https://github.com/yourusername/typing-test",
     live: "https://your-live-demo-link.com",
     category: "Frontend",
@@ -374,7 +472,7 @@ export default function Projects() {
                         className="space-y-4 flex-1"
                       >
                         <h3 className="text-lg font-semibold text-[#FDC700] mb-3">About This Project</h3>
-                        <p className="text-gray-300 leading-relaxed">{selectedProject.description}</p>
+                        <p className="text-gray-300 leading-relaxed">{selectedProject.briefdescription}</p>
                         
                         {selectedProject.challenges && (
                           <div className="mt-6">
@@ -412,7 +510,7 @@ export default function Projects() {
                       >
                         <h3 className="text-lg font-semibold text-[#FDC700] mb-4">Technologies Used</h3>
                         <div className="flex flex-wrap gap-3">
-                          {selectedProject.tech.map((tech, i) => (
+                          {selectedProject.techindetails.map((tech, i) => (
                             <motion.span
                               key={i}
                               initial={{ opacity: 0, scale: 0.8 }}
@@ -426,38 +524,60 @@ export default function Projects() {
                         </div>
                       </motion.div>
                     )}
+         {activeTab === "Features" && (
+  <motion.div
+    key="features"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.3 }}
+    className="space-y-6 flex-1"
+  >
+    <h3 className="text-lg font-semibold text-[#FDC700] mb-4">Key Features</h3>
 
-                    {activeTab === "Features" && (
-                      <motion.div
-                        key="features"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3 }}
-                        className="space-y-4 flex-1"
-                      >
-                        <h3 className="text-lg font-semibold text-[#FDC700] mb-4">Key Features</h3>
-                        <div className="grid gap-3">
-                          {(selectedProject.features || [
-                            "Responsive Design",
-                            "Modern UI/UX",
-                            "Performance Optimized",
-                            "Cross-browser Compatible"
-                          ]).map((feature, i) => (
-                            <motion.div
-                              key={i}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: i * 0.1 }}
-                              className="flex items-center gap-3 p-3 bg-gray-700/30 rounded-xl border border-gray-600/30 hover:bg-gray-700/50 transition-all duration-300"
-                            >
-                              <div className="w-2 h-2 bg-[#FDC700] rounded-full"></div>
-                              <span className="text-gray-300">{feature}</span>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
+    {selectedProject.features?.map((section, idx) => {
+      // Case 1: Role-based feature object
+      if (typeof section === "object" && section.role && section.items) {
+        return (
+          <div key={idx}>
+            <h4 className="text-md font-semibold text-gray-200 mb-2">
+              {section.role}
+            </h4>
+            <div className="grid gap-3">
+              {section.items.map((feature, i) => (
+                <motion.div
+                  key={`${section.role}-${i}`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-center gap-3 p-3 bg-gray-700/30 rounded-xl border border-gray-600/30 hover:bg-gray-700/50 transition-all duration-300"
+                >
+                  <div className="w-2 h-2 bg-[#FDC700] rounded-full"></div>
+                  <span className="text-gray-300">{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        );
+      }
+
+      // Case 2: Flat feature string
+      return (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: idx * 0.1 }}
+          className="flex items-center gap-3 p-3 bg-gray-700/30 rounded-xl border border-gray-600/30 hover:bg-gray-700/50 transition-all duration-300"
+        >
+          <div className="w-2 h-2 bg-[#FDC700] rounded-full"></div>
+          <span className="text-gray-300">{section}</span>
+        </motion.div>
+      );
+    })}
+  </motion.div>
+             )}
+
 
                   
                   </AnimatePresence>
