@@ -294,16 +294,27 @@ const projects = [
   category: "Frontend",
 },
 
-  {
-    title: "Spotify Clone",
-    description:
-      "A weather forecasting app using OpenWeather API with sleek UI.",
-    tech: ["React", "API", "Tailwind"],
-    img: "https://images.unsplash.com/photo-1501973801540-537f08ccae7b?w=800&q=80",
-    github: "https://github.com/yourusername/weather-app",
-    live: "https://your-live-demo-link.com",
-    category: "Frontend",
-  },
+{
+  title: "Tata Motors Clone",
+  description:
+    "A simple static clone of the Tata Motors website created while learning HTML and CSS. It focuses on layout, structure, and styling to replicate the original design.",
+  briefdescription:
+    "Static Tata Motors website clone built using HTML and CSS.",
+  tech: ["HTML", "CSS"],
+  techindetails: ["HTML", "CSS"],
+  features: [
+    "Static clone of Tata Motors website"
+  ],
+  img: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSiKYhLxN3oNJ5hLR5FTIM_DzpHisodHWZ8UMdipslcnCB3H9lZMTr1ecIPWSQr",
+  github: "https://github.com/JatinRajvani/Tata-Motors-Clone",
+  live: "https://dazzling-crepe-3f968e.netlify.app/",
+  category: "Frontend",
+      startDate: "october 2024",
+  endDate: "october 2024",
+  duration: "5 days",
+  teamSize: "1",
+  status: "Completed"
+},
   {
     title: "Skills-Swap",
     description:
