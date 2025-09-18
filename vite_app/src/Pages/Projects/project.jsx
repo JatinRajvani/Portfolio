@@ -76,8 +76,8 @@ const projects = [
   ],
   tech: ["React", "Tailwind", "Node.js", "MongoDB"],
   img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757956095/20250915_2230_Homy_App_Features_remix_01k5751pnwe3293hvc24xw7w2x_3_y2tkj4.png", // replace with real banner
-  github: "https://github.com/yourusername/homy",
-  live: "https://homy-website.vercel.app/",
+  github: "https://github.com/JatinRajvani/homy",
+  live: "https://homy-phev.vercel.app/",
   category: "Fullstack",
   features: [
     {
@@ -122,16 +122,69 @@ const projects = [
   status: "In Progress"
 }
 ,
-  {
-    title: "EcoHubs",
-    description:
-      "Ecommerce Website for second-hand products with authentication and cart functionality.",
-    tech: ["React", "Firebase"],
-    img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758051396/ecohubsimg_zzaglv.png",
-    github: "https://github.com/yourusername/typing-test",
-    live: "https://your-live-demo-link.com",
-    category: "Frontend",
-  },
+{
+  title: "EcoHubs – Second-Hand Ecommerce Platform",
+  description:
+    "A marketplace platform for buying and selling second-hand products with authentication, cart functionality, and product management features.",
+  briefdescription:
+    "EcoHubs provides a convenient way for users to sell and purchase second-hand items online. The platform supports user authentication, product listing with images, and a shopping cart system. It is designed to promote sustainable consumption by giving unused products a new life.",
+  techindetails: [
+    "React (Vite)",
+    "Tailwind CSS",
+    "Redux Toolkit",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT Authentication",
+    "Cloudinary (for product images)",
+    "RESTful API"
+  ],
+  tech: ["React", "Vite", "Node.js", "MongoDB"],
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758051396/ecohubsimg_zzaglv.png",
+  github: "https://github.com/JatinRajvani/odooxnmit",
+  live: "https://ecofinds-second-hand.netlify.app/",
+  category: "Fullstack",
+  features: [
+    {
+      role: "🛒 Product Listings",
+      items: [
+        "Browse available second-hand products by category",
+        "Search and filter items by name, price, or type",
+        "View detailed product pages with descriptions and images"
+      ]
+    },
+    {
+      role: "👤 User Authentication",
+      items: [
+        "Secure login and signup with JWT",
+        "Role-based access for buyers and sellers",
+        "Profile management for users"
+      ]
+    },
+    {
+      role: "🛍️ Cart & Orders",
+      items: [
+        "Add/remove items from the shopping cart",
+        "View total price before checkout",
+        "Order tracking (basic functionality in progress)"
+      ]
+    },
+    {
+      role: "📸 Product Management",
+      items: [
+        "Upload product images via Cloudinary",
+        "Edit and delete product listings",
+        "Manage inventory as a seller"
+      ]
+    }
+  ],
+  startDate: "September 2025",
+  endDate: "",
+  duration: "",
+  teamSize: "4",
+  status: "In Progress"
+}
+,
   {
     title: "Rental Management",
     description: "A modern UI kit built in Figma and implemented in React.",
@@ -141,36 +194,106 @@ const projects = [
     live: "https://your-live-demo-link.com",
     category: "UI",
   },
-  {
-    title: "Youtube Clone",
-    description:
-      "Personal portfolio website with smooth animations and responsive design.",
-    tech: ["Next.js", "Tailwind", "Framer Motion"],
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://your-live-demo-link.com",
-    category: "Frontend",
-  },
-  {
-    title: "Amazon Clone",
-    description:
-      "A complete online store with cart, checkout, and admin dashboard.",
-    tech: ["React", "Redux", "Node.js", "MongoDB"],
-    img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80",
-    github: "https://github.com/yourusername/ecommerce",
-    live: "https://your-live-demo-link.com",
-    category: "Fullstack",
-  },
-  {
-    title: "Digital Clock",
-    description:
-      "A blogging platform where users can create, edit, and comment on articles.",
-    tech: ["Next.js", "Supabase", "Tailwind"],
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
-    github: "https://github.com/yourusername/blog-platform",
-    live: "https://your-live-demo-link.com",
-    category: "Fullstack",
-  },
+{
+  title: "YouTube Clone – Video Streaming Platform",
+  description:
+    "A beginner-friendly project built using React and the YouTube API to replicate core YouTube features such as video playback, search, and infinite scrolling.",
+  briefdescription:
+    "This YouTube Clone was my first hands-on project while learning React. It integrates the YouTube API to fetch and display real-time videos, supports search functionality, infinite scrolling for seamless browsing, and responsive video playback. The project helped me understand API integration, state management, and component-based design in React.",
+  techindetails: [
+    "React (Vite)",
+    "Normal CSS (No framework at the time)",
+    "YouTube Data API",
+    "REST API integration"
+  ],
+  tech: ["React", "Vite", "CSS","Youtube API"],
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758200202/yt-colne_image_iiybpo.png", // replace with project screenshot if available
+  github: "https://github.com/JatinRajvani/Clone-using-React", // replace with your repo link
+  live: "https://thriving-phoenix-8688f2.netlify.app/", // replace with your deployed project link
+  category: "Frontend",
+  features: [
+    {
+      role: "▶️ Video Streaming",
+      items: [
+        "Play YouTube videos directly using API integration",
+        "Responsive video player layout",
+        "Display related video suggestions"
+      ]
+    },
+    {
+      role: "🔍 Search Functionality",
+      items: [
+        "Search for videos using the YouTube API",
+        "Real-time results with query updates",
+        "Easy navigation between video results"
+      ]
+    },
+    {
+      role: "♾️ Infinite Scrolling",
+      items: [
+        "Load more videos as you scroll down",
+        "Seamless browsing without page refresh",
+        "Improved user experience with dynamic loading"
+      ]
+    },
+    {
+      role: "📱 Responsive Design",
+      items: [
+        "Simple CSS-based responsive layout",
+        "Works on mobile, tablet, and desktop screens"
+      ]
+    }
+  ],
+  startDate: "November 2024",
+  endDate: "December 2024",
+  duration: "3 Weeks",
+  teamSize: "1",
+  status: "Completed"
+}
+,
+{
+  title: "Nvidia Clone",
+  description:
+    "A simple static clone of Nvidia’s website created using HTML and CSS. This project focuses on replicating the UI and layout. (Note: It is not responsive and does not include advanced features.)",
+  briefdescription:
+    "Static website clone of Nvidia made with HTML and CSS. A practice project to improve frontend design skills.",
+  tech: ["HTML", "CSS"],
+  techindetails: [
+"HTML","CSS"
+  ],
+  features:[
+"Static Clone of Nvidia"
+  ],
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758202048/NVIDIA-logo-BL_nxm3uc.jpg",
+  github: "https://github.com/JatinRajvani/Nvidia-Clone-",
+  live: "https://nvidiaclone.netlify.app/",
+  category: "Frontend",
+    startDate: "September 2024",
+  endDate: "September 2024",
+  duration: "4 days",
+  teamSize: "1",
+  status: "Completed"
+}
+,
+{
+  title: "Digital Clock",
+  description:
+    "A simple responsive digital clock built with HTML, CSS, and JavaScript. It features a clean UI with a colorful gradient border and real-time updates.",
+  briefdescription:
+    "Responsive digital clock with gradient border, made using HTML, CSS, and JavaScript.",
+  tech: ["HTML", "CSS", "JavaScript"],
+  techindetails: ["HTML", "CSS", "JavaScript"],
+  features: [
+    "Digital clock with AM/PM format",
+    "Gradient border design",
+    "Fully responsive layout"
+  ],
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758203000/Digital_Clock_ostfmi.png",
+  github: "https://github.com/JatinRajvani/Digital-Clock",
+  live: "https://clockwithcolorfulborder.netlify.app/",
+  category: "Frontend",
+},
+
   {
     title: "Spotify Clone",
     description:
@@ -407,15 +530,15 @@ export default function Projects() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-300 text-sm">End Date</span>
-                    <span className="text-white font-medium text-sm">{selectedProject.endDate || "Feb 2024"}</span>
+                    <span className="text-white font-medium text-sm">{selectedProject.endDate }</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-300 text-sm">Duration</span>
-                    <span className="text-white font-medium text-sm">{selectedProject.duration || "3 weeks"}</span>
+                    <span className="text-white font-medium text-sm">{selectedProject.duration}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-300 text-sm">Team Size</span>
-                    <span className="text-white font-medium text-sm">{selectedProject.teamSize || "Solo Project"}</span>
+                    <span className="text-white font-medium text-sm">{selectedProject.teamSize}</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-300 text-sm">Status</span>
