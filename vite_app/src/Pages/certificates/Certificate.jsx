@@ -30,7 +30,8 @@ export default function Certificates() {
       certificateLink: "https://simpli-web.app.link/e/LjFaS8SJUXb",
     },
     {
-      title: "Getting Started with Amazon DocumentDB (with MongoDB compatibility)",
+      title:
+        "Getting Started with Amazon DocumentDB (with MongoDB compatibility)",
       by: "Simplilearn",
       category: "Simplilearn",
       description:
@@ -104,7 +105,6 @@ export default function Certificates() {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
-
   const categories = ["All", "Simplilearn", "HackerRank", "Odoo", "EduSkills"];
 
   const filteredCertificates =
@@ -113,22 +113,22 @@ export default function Certificates() {
       : certificates.filter((cert) => cert.category === selectedCategory);
 
   return (
-    <section id="certificates" className="py-20 flex flex-col items-center">
-      <h2 className="text-5xl font-extrabold text-white mb-6 text-center">
+    <section id="certificates" className="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-10">
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 text-center">
         My <span className="text-[#FDC700]">Certificates</span>
       </h2>
-      <p className="text-gray-400 text-center max-w-2xl mb-10">
+      <p className="text-gray-400 text-center max-w-2xl mb-10 text-sm sm:text-base">
         A showcase of my learning journey — skills gained through dedication and
         hands-on projects.
       </p>
 
       {/* 🔹 Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 mb-12 w-full max-w-3xl">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 
+            className={`px-4 sm:px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 
               ${
                 selectedCategory === category
                   ? "bg-[#FDC700] text-black"
@@ -142,42 +142,44 @@ export default function Certificates() {
 
       {/* 🔹 Certificates Grid */}
       <div
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 
-                   auto-rows-[1fr] justify-items-center w-full px-6"
+        className="grid gap-8 sm:gap-10 md:gap-12 
+                   grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
+                   justify-items-center w-full"
       >
         {filteredCertificates.map((cert, index) => (
           <div
             key={index}
-            className="relative group w-[350px] rounded-2xl bg-gradient-to-br from-[#FDC700] to-transparent 
-                       hover:from-yellow-400 hover:to-transparent transition-all duration-300 p-[2px] flex"
+            className="relative group w-full max-w-[360px] sm:max-w-[340px] 
+                       rounded-2xl bg-gradient-to-br from-[#FDC700] to-transparent 
+                       hover:from-yellow-400 hover:to-transparent transition-all duration-300 p-[2px]"
           >
             <div
               className="flex flex-col justify-between bg-[#101828]/90 backdrop-blur-lg rounded-2xl w-full 
                          border border-[#1E293B]/30 hover:border-[#FDC700]/60 
                          hover:shadow-[0_0_15px_rgba(253,199,0,0.3)]
                          transition-all duration-300 ease-out
-                         p-6 min-h-[300px] flex-grow relative"
+                         p-5 sm:p-6 min-h-[280px] sm:min-h-[300px] relative"
             >
               {/* Icon */}
               <div className="absolute top-4 right-4 text-[#FDC700] opacity-70">
-                <Award size={26} />
+                <Award size={24} className="sm:w-6 sm:h-6" />
               </div>
 
               {/* Content */}
-              <div className="flex-grow pr-10">
+              <div className="flex-grow pr-6 sm:pr-10">
                 <h2
-                  className="text-2xl font-bold text-[#FDC700] mb-2 line-clamp-2 leading-tight"
+                  className="text-xl sm:text-2xl font-bold text-[#FDC700] mb-2 line-clamp-2 leading-tight"
                   style={{ minHeight: "48px" }}
                 >
                   {cert.title}
                 </h2>
 
-                <h3 className="text-gray-300 font-semibold text-sm mb-3 italic truncate">
+                <h3 className="text-gray-300 font-semibold text-xs sm:text-sm mb-3 italic truncate">
                   {cert.by}
                 </h3>
 
                 <p
-                  className="text-gray-400 text-sm leading-relaxed line-clamp-4"
+                  className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-4"
                   style={{ minHeight: "80px" }}
                 >
                   {cert.description}
@@ -189,7 +191,7 @@ export default function Certificates() {
                 href={cert.certificateLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 self-start bg-[#FDC700] text-black px-4 py-2 rounded-md font-semibold 
+                className="mt-4 self-start bg-[#FDC700] text-black px-4 py-2 rounded-md font-semibold text-xs sm:text-sm
                           hover:bg-yellow-400 transition duration-300"
               >
                 View Certificate
