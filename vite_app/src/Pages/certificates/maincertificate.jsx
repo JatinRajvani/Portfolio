@@ -32,11 +32,13 @@ const Maincertificatesection = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen  bg-gradient-to-b from-[  ] to-[#201b46]">
-      <div className="absolute text-white font-bold text-lg font-sans  z-20 w-full h-screen overflow-y-auto scrollbar-hide ">
-        <CertificateSection/>
+    <div className="relative w-full h-screen bg-gradient-to-b from-[#000000] to-[#201b46]">
+      <div className="absolute text-white font-bold text-lg font-sans z-20 w-full h-screen overflow-y-auto scrollbar-hide">
+        <div className="transform-gpu">
+          <CertificateSection/>
+        </div>
       </div>
-
+      
       <div
         ref={starsRef}
         className="absolute top-0 left-0 w-[1px] h-[1px] animate-star z-10"
@@ -99,8 +101,6 @@ const Maincertificatesection = () => {
         }
       `}</style>
     </div>
-
-    
   );
 };
 
