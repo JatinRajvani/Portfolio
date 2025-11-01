@@ -159,58 +159,59 @@ const About = () => {
             </motion.div>
 
             {/* Clean glassmorphism card with simplified content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-lg md:text-xl text-gray-200 leading-relaxed max-w-4xl"
-            >
-              <div className="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-2xl relative overflow-hidden">
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FFCB22]/5 via-transparent to-transparent rounded-2xl"></div>
-                
-                <div className="relative z-10">
-                  <motion.p 
-                    className="mb-6"
-                    initial={{ opacity: 0 }}
-                    animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6 }}
-                  >
-                    👋 Hi, I'm <span className="font-bold text-[#FFCB22]">Rajvani Jatin</span> — a passionate Web Developer and Computer Science student.
-                    I specialize in creating <span className="text-[#FFCB22] font-semibold">user-centric web experiences</span> that are both beautiful and functional.
-                  </motion.p>
+<motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+  transition={{ duration: 0.8, delay: 0.3 }}
+  className="text-sm sm:text-base md:text-lg text-gray-200 leading-relaxed sm:leading-loose max-w-3xl md:max-w-4xl mx-auto"
+>
+  <div className="bg-white/5 backdrop-blur-md rounded-2xl p-5 sm:p-6 md:p-8 border border-white/10 shadow-2xl relative overflow-hidden">
+    {/* Subtle gradient overlay */}
+    <div className="absolute inset-0 bg-gradient-to-br from-[#FFCB22]/5 via-transparent to-transparent rounded-2xl"></div>
 
-                  <motion.p 
-                    className="mb-6"
-                    initial={{ opacity: 0 }}
-                    animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 }}
-                  >
-                    I thrive on solving real-world problems through code and building digital products using the <span className="text-[#FFCB22] font-semibold">MERN stack</span>.
-                    Whether it's sleek front-end interfaces or solid back-end systems, I love it all.
-                  </motion.p>
+    <div className="relative z-10 space-y-4 sm:space-y-6">
+      <motion.p 
+        className="text-gray-300"
+        initial={{ opacity: 0 }}
+        animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        👋 Hi, I'm <span className="font-bold text-[#FFCB22]">Rajvani Jatin</span> — a passionate Web Developer and Computer Science student.
+        I specialize in creating <span className="text-[#FFCB22] font-semibold">user-centric web experiences</span> that are both beautiful and functional.
+      </motion.p>
 
-                  <motion.p 
-                    className="mb-6"
-                    initial={{ opacity: 0 }}
-                    animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ duration: 0.8, delay: 1.0 }}
-                  >
-                    My current focus is on learning deeply, collaborating on real-world projects, and preparing for internships and hackathons.
-                  </motion.p>
+      <motion.p 
+        className="text-gray-300"
+        initial={{ opacity: 0 }}
+        animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
+        I thrive on solving real-world problems through code and building digital products using the <span className="text-[#FFCB22] font-semibold">MERN stack</span>.
+        Whether it's sleek front-end interfaces or solid back-end systems, I love it all.
+      </motion.p>
 
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
-                    transition={{ duration: 0.8, delay: 1.2 }}
-                    className="font-semibold"
-                  >
-                    <span className="text-[#FFCB22]">Collaboration</span>, <span className="text-[#FFCB22]">consistency</span>, and <span className="text-[#FFCB22]">curiosity</span> are the principles I work by.
-                    Every project I work on is a step forward in my journey to becoming a world-class developer.
-                  </motion.p>
-                </div>
-              </div>
-            </motion.div>
+      <motion.p 
+        className="text-gray-300"
+        initial={{ opacity: 0 }}
+        animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.8, delay: 1.0 }}
+      >
+        My current focus is on learning deeply, collaborating on real-world projects, and preparing for internships and hackathons.
+      </motion.p>
+
+      <motion.p
+        className="font-semibold text-gray-300"
+        initial={{ opacity: 0 }}
+        animate={heroInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+      >
+        <span className="text-[#FFCB22]">Collaboration</span>, <span className="text-[#FFCB22]">consistency</span>, and <span className="text-[#FFCB22]">curiosity</span> are the principles I work by.
+        Every project I work on is a step forward in my journey to becoming a world-class developer.
+      </motion.p>
+    </div>
+  </div>
+</motion.div>
+
           </div>
         </section>
 
