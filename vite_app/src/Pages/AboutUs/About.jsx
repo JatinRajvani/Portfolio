@@ -91,11 +91,13 @@ const About = () => {
 
   return (
     <>
-      <div className="max-h-screen w-full px-6 md:px-20 py-0 text-white font-sans">
+      <div className="w-full min-h-screen px-4 sm:px-6 lg:px-20 py-4 sm:py-0 text-white font-sans">
         {/* Enhanced Hero Section */}
         <section 
           ref={heroRef}
-          className="w-full min-h-screen  text-white px-6 md:px-3 pt-0 pb-0 flex flex-col items-center justify-center relative overflow-hidden "
+          className="w-full min-h-screen text-white px-2 sm:px-6 lg:px-3 
+                     pt-10 sm:pt-0 pb-8 sm:pb-0 
+                     flex flex-col items-center justify-center relative overflow-hidden "
         >
           {/* Background decorative elements */}
           <div className="absolute inset-0 overflow-hidden">
@@ -127,30 +129,31 @@ const About = () => {
           </div>
 
           {/* Main content */}
-          <div className="relative z-10 max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: -50 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <h1 className="text-4xl md:text-5xl font-bold text-[#FFCB22] mb-8 drop-shadow-sm text-center relative">
+          <div className="relative z-10 w-full max-w-4xl mx-auto text-center px-2 sm:px-6">
+            <motion.div className="mb-6 sm:mb-8">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FFCB22] 
+                             mb-6 sm:mb-8 drop-shadow-sm text-center relative 
+                             px-4 sm:px-0" // Added horizontal padding for mobile
+              >
                 About Me
                 
-                {/* Decorative sparkles */}
+                {/* Update sparkles position for mobile */}
                 <motion.div
-                  className="absolute -top-2 -right-8 text-[#FFCB22]"
+                  className="absolute -top-2 -right-2 sm:-right-8 text-[#FFCB22]"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
-                  <Sparkles size={24} />
+                  <Sparkles size={20} className="sm:hidden" /> {/* Smaller size for mobile */}
+                  <Sparkles size={24} className="hidden sm:block" /> {/* Original size for desktop */}
                 </motion.div>
               </h1>
               
+              {/* Update gradient line width for mobile */}
               <motion.div
-                className="h-1 bg-gradient-to-r from-transparent via-[#FFCB22] to-transparent rounded-full mx-auto"
+                className="h-1 bg-gradient-to-r from-transparent via-[#FFCB22] to-transparent 
+                           rounded-full mx-auto w-[120px] sm:w-[200px]" // Fixed width for different screens
                 initial={{ width: 0 }}
-                animate={heroInView ? { width: "200px" } : { width: 0 }}
+                animate={heroInView ? { width: "120px" } : { width: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
               />
             </motion.div>
