@@ -5,7 +5,7 @@ import devAnimation from '../../assets/WebDevelopmentAnimation.json';
 
 const Home = () => {
   return (
-    <div className="relative w-full min-h-[100svh] overflow-hidden bg-[#121212] pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] scrollbar-hide">
+<div className="relative w-full min-h-[100svh] bg-[#121212] pt-[env(safe-area-inset-top)] pb-[calc(env(safe-area-inset-bottom)+1rem)] overflow-hidden">
 
       
       {/* Gradient Background */}
