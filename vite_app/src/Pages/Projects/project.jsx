@@ -470,168 +470,167 @@ export default function Projects() {
         </div>
 
         {/* Popup Modal */}
-        <AnimatePresence>
-          {selectedProject && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md px-4"
-              onClick={() => setSelectedProject(null)}
+<AnimatePresence>
+  {selectedProject && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md px-2 sm:px-4 py-4 overflow-y-auto"
+      onClick={() => setSelectedProject(null)}
+    >
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0, y: 40 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.95, opacity: 0, y: 40 }}
+        transition={{ duration: 0.35, type: "spring", bounce: 0.25 }}
+        className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] max-h-[90vh] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white rounded-2xl shadow-2xl border border-gray-700/40 overflow-hidden flex flex-col"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex justify-between items-center bg-gradient-to-r from-gray-800 to-gray-700 px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-700/40">
+          <div className="truncate">
+            <motion.h2
+              initial={{ opacity: 0, x: -15 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.15 }}
+              className="text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-[#FDC700] to-yellow-300 bg-clip-text text-transparent"
             >
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0, y: 50 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.8, opacity: 0, y: 50 }}
-                transition={{ duration: 0.4, type: "spring", bounce: 0.3 }}
-                className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white rounded-3xl shadow-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden border border-gray-700/50 relative"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {/* Modal Header */}
-                <div className="relative bg-gradient-to-r from-gray-800 to-gray-700 p-4 sm:p-6 border-b border-gray-600/50">
-                  <div className="flex justify-between items-start flex-wrap gap-2">
-                    <div>
-                      <motion.h2
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-[#FDC700] to-yellow-300 bg-clip-text text-transparent"
-                      >
-                        {selectedProject.title}
-                      </motion.h2>
-                      <motion.p
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.3 }}
-                        className="text-gray-300 text-sm"
-                      >
-                        {selectedProject.category || "Web Application"}
-                      </motion.p>
-                    </div>
-                    <motion.button
-                      onClick={() => setSelectedProject(null)}
-                      className="p-2 rounded-full bg-gray-700/50 hover:bg-red-500/20 transition-all duration-300 group"
-                    >
-                      <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-red-400" />
-                    </motion.button>
-                  </div>
+              {selectedProject.title}
+            </motion.h2>
+            <p className="text-gray-400 text-xs sm:text-sm">
+              {selectedProject.category || "Web Application"}
+            </p>
+          </div>
+
+          <motion.button
+            onClick={() => setSelectedProject(null)}
+            className="p-2 rounded-full bg-gray-700/50 hover:bg-red-500/20 transition-all duration-300 group"
+          >
+            <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-red-400" />
+          </motion.button>
+        </div>
+
+        {/* Body */}
+        <div className="p-3 sm:p-5 md:p-6 overflow-y-auto flex-1">
+          <div className="flex flex-col lg:flex-row gap-5 md:gap-6">
+            {/* Left */}
+            <div className="w-full lg:w-2/5 space-y-5 md:space-y-6">
+              {selectedProject.video ? (
+                <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md">
+                  <iframe
+                    src={selectedProject.video}
+                    title={selectedProject.title}
+                    className="w-full h-full rounded-xl"
+                    allowFullScreen
+                  />
                 </div>
+              ) : (
+                <img
+                  src={selectedProject.img}
+                  alt={selectedProject.title}
+                  className="w-full h-auto max-h-64 sm:max-h-72 md:max-h-80 object-cover rounded-xl shadow-md"
+                />
+              )}
 
-                {/* Modal Body */}
-                <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(90vh-100px)] scrollbar-hide">
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    {/* Left (40%) */}
-                    <div className="w-full lg:w-2/5 space-y-6">
-                      {selectedProject.video ? (
-                        <iframe
-                          src={selectedProject.video}
-                          title={selectedProject.title}
-                          className="w-full h-52 sm:h-64 rounded-2xl"
-                          allowFullScreen
-                        />
-                      ) : (
-                        <img
-                          src={selectedProject.img}
-                          alt={selectedProject.title}
-                          className="w-full h-52 sm:h-64 object-cover rounded-2xl"
-                        />
-                      )}
-
-                      {/* Project Info */}
-                      <div className="bg-gray-800/40 p-4 rounded-2xl border border-gray-700/40">
-                        <h3 className="text-lg font-semibold text-[#FDC700] mb-3">
-                          Project Info
-                        </h3>
-                        <div className="space-y-2 text-sm text-gray-300">
-                          <p><b>Duration:</b> {selectedProject.duration}</p>
-                          <p><b>Team Size:</b> {selectedProject.teamSize}</p>
-                          <p>
-                            <b>Status:</b>{" "}
-                            <span className="px-2 py-0.5 bg-green-500/20 text-green-400 rounded-full text-xs border border-green-500/30">
-                              {selectedProject.status}
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Right (60%) */}
-                    <div className="w-full lg:w-3/5 space-y-6">
-                      <div className="flex gap-2 bg-gray-800/50 p-1 rounded-2xl border border-gray-700/50">
-                        {["Project Details", "Tech Stack", "Features"].map((tab) => (
-                          <button
-                            key={tab}
-                            onClick={() => setActiveTab(tab)}
-                            className={`flex-1 py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm font-semibold rounded-xl ${
-                              activeTab === tab
-                                ? "bg-[#FDC700] text-black shadow-lg"
-                                : "text-gray-300 hover:bg-gray-700/50"
-                            }`}
-                          >
-                            {tab}
-                          </button>
-                        ))}
-                      </div>
-
-                      {/* Tab Content */}
-                      <div className="bg-gray-800/30 rounded-2xl p-4 sm:p-6 border border-gray-700/30 text-sm leading-relaxed text-gray-300">
-                        {activeTab === "Project Details" && (
-                          <>
-                            <h3 className="text-[#FDC700] font-semibold mb-2">
-                              About This Project
-                            </h3>
-                            <p>{selectedProject.briefdescription}</p>
-                          </>
-                        )}
-                        {activeTab === "Tech Stack" && (
-                          <div className="flex flex-wrap gap-2">
-                            {selectedProject.techindetails.map((tech, i) => (
-                              <span
-                                key={i}
-                                className="bg-[#FDC700] text-black px-3 py-1 rounded-full text-xs font-semibold"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                        {activeTab === "Features" && (
-                          <ul className="list-disc pl-5 space-y-1">
-                            {selectedProject.features.map((f, i) => (
-                              <li key={i}>{f}</li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-
-                      {/* Buttons */}
-                      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                        <a
-                          href={selectedProject.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-2 bg-[#FDC700] text-black font-semibold py-2 sm:py-3 rounded-xl hover:bg-yellow-400"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          View Project
-                        </a>
-                        <a
-                          href={selectedProject.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 flex items-center justify-center gap-2 bg-gray-700 text-white font-semibold py-2 sm:py-3 rounded-xl hover:bg-gray-600"
-                        >
-                          <Github className="w-4 h-4" />
-                          View Source
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+              {/* Project Info */}
+              <div className="bg-gray-800/40 p-4 rounded-xl border border-gray-700/30 text-sm sm:text-base">
+                <h3 className="text-[#FDC700] font-semibold mb-3 text-base sm:text-lg">
+                  Project Info
+                </h3>
+                <div className="space-y-2 text-gray-300">
+                  <p><b>Duration:</b> {selectedProject.duration}</p>
+                  <p><b>Team Size:</b> {selectedProject.teamSize}</p>
+                  <p>
+                    <b>Status:</b>{" "}
+                    <span className="px-2 py-0.5 bg-green-500/20 text-green-400 rounded-full text-xs border border-green-500/30">
+                      {selectedProject.status}
+                    </span>
+                  </p>
                 </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Right */}
+            <div className="w-full lg:w-3/5 space-y-5 md:space-y-6">
+              {/* Tabs */}
+              <div className="flex flex-wrap gap-2 bg-gray-800/50 p-1 rounded-xl border border-gray-700/40 sm:justify-start justify-center">
+                {["Project Details", "Tech Stack", "Features"].map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg ${
+                      activeTab === tab
+                        ? "bg-[#FDC700] text-black shadow-md"
+                        : "text-gray-300 hover:bg-gray-700/50"
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+
+              {/* Tab Content */}
+              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-5 border border-gray-700/30 text-sm sm:text-base leading-relaxed text-gray-300">
+                {activeTab === "Project Details" && (
+                  <>
+                    <h3 className="text-[#FDC700] font-semibold mb-2 sm:mb-3 text-base sm:text-lg">
+                      About This Project
+                    </h3>
+                    <p>{selectedProject.briefdescription}</p>
+                  </>
+                )}
+                {activeTab === "Tech Stack" && (
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.techindetails.map((tech, i) => (
+                      <span
+                        key={i}
+                        className="bg-[#FDC700] text-black px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {activeTab === "Features" && (
+                  <ul className="list-disc pl-5 space-y-1">
+                    {selectedProject.features.map((f, i) => (
+                      <li key={i}>{f}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <a
+                  href={selectedProject.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-[#FDC700] text-black font-semibold py-2 sm:py-3 rounded-lg hover:bg-yellow-400 transition"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  View Project
+                </a>
+                <a
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gray-700 text-white font-semibold py-2 sm:py-3 rounded-lg hover:bg-gray-600 transition"
+                >
+                  <Github className="w-4 h-4" />
+                  View Source
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+
       </div>
     </section>
   );
