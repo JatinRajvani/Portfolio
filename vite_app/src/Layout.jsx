@@ -16,20 +16,26 @@ function Layout() {
 
         {/* Main Content */}
 <div
- className="flex-1 max-h-screen overflow-y-auto lg:overflow-y-auto scrollbar-hide m-3 sm:m-4 md:m-5 rounded-md flex items-center justify-center"
-
-
+  className="
+    flex-1
+    overflow-y-auto lg:overflow-y-hidden
+    scrollbar-hide
+    m-3 sm:m-4 md:m-5
+    rounded-md
+  "
 >
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/about" element={<StarField />} />
     <Route path="/stars" element={<StarField />} />
     <Route path="/projects" element={<MainProject />} />
-    <Route path='/certificates' element={<Maincertificatesection />} />
-    <Route path='/contact' element={<Maincontactsection />} />
-    <Route path='/resume' element={<MainResumePage />} />
+    <Route path="/certificates" element={<Maincertificatesection />} />
+    <Route path="/contact" element={<Maincontactsection />} />
+    <Route path="/resume" element={<MainResumePage />} />
   </Routes>
 </div>
+
+
 
       </div>
     </BrowserRouter>

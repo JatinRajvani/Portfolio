@@ -6,7 +6,7 @@ import devAnimation from '../../assets/WebDevelopmentAnimation.json';
 const Home = () => {
   return (
     <div className="relative w-full min-h-screen overflow-hidden bg-[#121212] scrollbar-hide">
-
+      
       {/* Gradient Background */}
       <div className="absolute inset-0 z-0 bg-[conic-gradient(at_bottom_left,_#121212,_#000000_40%,_#FFD700_100%)] opacity-100" />
 
@@ -23,17 +23,16 @@ const Home = () => {
       </div>
 
       {/* Main Content */}
-<div className="relative z-10 min-h-screen overflow-y-auto lg:overflow-y-hidden scrollbar-thin scrollbar-thumb-yellow-400 scrollbar-track-transparent px-4 py-0 flex flex-col lg:flex-row items-center justify-between gap-10">
-
-
-        {/* Hero Section */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center text-white">
+      <div className="relative z-10 min-h-screen px-5 sm:px-8 py-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+        
+        {/* Hero Section (Top on mobile) */}
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-start items-center text-white order-1 lg:order-none">
           <HeroSection />
         </div>
 
-        {/* Animation */}
-        <div className="w-full lg:w-[45%] flex justify-center items-center pr-15">
-          <div className="bg-black bg-opacity-40 border-2 border-yellow-400 shadow-[0_0_30px_4px_rgba(234,179,8,0.3)] rounded-2xl p-6">
+        {/* Animation (Below hero on mobile) */}
+        <div className="w-full lg:w-[45%] flex justify-center items-center order-2 lg:order-none">
+          <div className="bg-black bg-opacity-40 border-2 border-yellow-400 shadow-[0_0_30px_4px_rgba(234,179,8,0.3)] rounded-2xl p-6 w-[85%] sm:w-[70%] md:w-[60%] lg:w-auto">
             <Lottie animationData={devAnimation} loop={true} className="w-full max-w-md" />
           </div>
         </div>
