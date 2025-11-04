@@ -116,8 +116,7 @@
 
 // export default EducationSection;
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import { GraduationCap } from "lucide-react";
 
 const educationData = [
@@ -128,13 +127,13 @@ const educationData = [
     duration: "Aug 2024 – May 2028",
     highlights: [
       "Relevant Courses: DSA, Web Development, DBMS",
-      "Built 'Homy' – Hostel Booking MERN App , Attendance and Payroll Management App",
+      "Built 'Homy' – Hostel Booking MERN App, Attendance and Payroll Management App",
     ],
   },
   {
     degree: "Higher Secondary (12th), Science Stream",
     university: "BKKPSM School Palanpur",
-    location: "Palanpur , Gujarat",
+    location: "Palanpur, Gujarat",
     duration: "Apr 2022 – Mar 2024",
     highlights: [
       "Percentage: Board – 69%",
@@ -144,54 +143,73 @@ const educationData = [
   {
     degree: "Secondary (10th)",
     university: "BKKPSM School Palanpur",
-    location: "Palanpur , Gujarat",
+    location: "Palanpur, Gujarat",
     duration: "Apr 2020 – Mar 2022",
     highlights: ["Percentage: Board – 82%"],
   },
 ];
 
+// 📘 One-time fade-in animation using Intersection Observer
+const FadeIn = ({ children, className = "" }) => {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.unobserve(entry.target); // 👈 play once
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`${className} transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
+
 const EducationSection = () => {
   return (
     <section id="education" className="py-0 bg-transparent">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-12 text-center"
-        >
+
+        {/* 🟡 Section Header */}
+        <FadeIn className="mb-12 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-400 relative pb-5 leading-snug">
             🎓 Education
           </h2>
 
-          {/* Animated underline */}
-          <motion.div
-            className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full mx-auto mt-2"
-            initial={{ width: 0 }}
-            whileInView={{ width: "250px" }}
-            transition={{ duration: 1, delay: 0.5 }}
-            viewport={{ once: true }}
-          />
-        </motion.div>
+          <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full mx-auto mt-2 w-[250px]" />
+        </FadeIn>
 
-        {/* Education Timeline */}
+        {/* 🟢 Education Timeline */}
         <div className="relative sm:pl-8 md:pl-10 space-y-8 sm:space-y-10 md:space-y-12">
           {educationData.map((item, index) => (
-            <motion.div
+            <FadeIn
               key={index}
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
               className="relative group flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6"
             >
-              {/* Icon (adjusts on screen size) */}
+              {/* 🎯 Icon */}
               <div className="absolute sm:static left-[-1.6rem] sm:left-0 top-1/2 sm:top-[0.5rem] -translate-y-1/2 sm:translate-y-0 transform bg-[#FFCB22] shadow-md rounded-full p-2 sm:p-2.5 z-10">
                 <GraduationCap className="text-white w-5 h-5 sm:w-6 sm:h-6" />
               </div>
 
-              {/* Card */}
+              {/* 📘 Card */}
               <div className="w-full bg-[#101725] backdrop-blur-md border border-[#110E28] p-4 sm:p-6 md:p-7 rounded-2xl shadow-xl transition duration-200 ease-in-out group-hover:shadow-[0_0_25px_5px_#37BAF5] text-center sm:text-left">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-yellow-300 leading-tight">
                   {item.degree}
@@ -209,7 +227,7 @@ const EducationSection = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </div>
@@ -218,3 +236,4 @@ const EducationSection = () => {
 };
 
 export default EducationSection;
+
