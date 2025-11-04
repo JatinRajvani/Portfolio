@@ -1,10 +1,10 @@
 import React from "react";
-import CoreSkills from "../AboutUs/Summary.jsx";
+// import CoreSkills from "../AboutUs/Summary.jsx";
 import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CurrentStatusSection from "../AboutUs/Current.jsx";
 import EducationSection from "../AboutUs/Education.jsx";
-import SkillsSection from "./Skills.jsx";
+// import SkillsSection from "./Skills.jsx";
 import TechStack from "./TechStack.jsx";
 import { Sparkles } from "lucide-react";
 
@@ -23,7 +23,8 @@ const About = () => {
         {/* ===================== HERO SECTION ===================== */}
         <section
           ref={ref}
-          className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden px-2 sm:px-6 lg:px-3 pt-10 pb-8 sm:pt-0 sm:pb-0"
+          className="relative w-full min-h-[80dvh] flex flex-col items-center justify-center overflow-hidden px-2 sm:px-6 lg:px-3 py-0"
+
         >
           {/* ✅ Light, low-cost background glow */}
           {!shouldReduceMotion && (

@@ -7,9 +7,9 @@ import { LuMonitor } from "react-icons/lu";
 
 const TimelineItem = ({ icon, title, description, isLast = false }) => {
   return (
-    <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 group mb-10 sm:mb-10">
+    <div className="flex flex-col sm:flex-row gap-0 sm:gap-8 group mb-10 sm:mb-10">
       {/* Left: Icon + connector */}
-  <div className="relative flex flex-col items-center sm:items-start min-h-[180px] sm:min-h-[220px]">
+  <div className="relative flex flex-col items-center sm:items-start min-h-[150px] sm:min-h-[220px]">
 
         <motion.div
           className="relative z-10"
@@ -24,9 +24,16 @@ const TimelineItem = ({ icon, title, description, isLast = false }) => {
         </motion.div>
 
         {/* Connecting Line */}
+{/* Connecting Line */}
 {!isLast && (
   <div className="absolute left-1/2 sm:left-8 w-[3px] h-[calc(100%+4rem)] bg-gradient-to-b from-[#FFCB22]/70 via-gray-700/60 to-gray-800 -translate-x-1/2 blur-[0.5px]"></div>
 )}
+
+{/* 🔸 Show line for last item only on mobile */}
+{isLast && (
+  <div className="absolute left-1/2 w-[3px] h-[calc(100%+4rem)] bg-gradient-to-b from-[#FFCB22]/70 via-gray-700/60 to-gray-800 -translate-x-1/2 blur-[0.5px] sm:hidden"></div>
+)}
+
 
 
       </div>
