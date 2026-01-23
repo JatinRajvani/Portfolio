@@ -27,37 +27,35 @@ const About = () => {
 
         {/* Main Content */}
         <div
-          className={`relative z-10 w-full max-w-4xl mx-auto text-center px-2 sm:px-6 transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
+          className={`relative z-10 w-full max-w-4xl mx-auto text-center px-2 sm:px-6 transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            }`}
         >
           {/* Heading */}
           <div className="mb-6 sm:mb-8">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FFCB22] mb-6 sm:mb-8 relative px-4 sm:px-0 drop-shadow-sm">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-accent)] mb-6 sm:mb-8 relative px-4 sm:px-0 drop-shadow-sm">
               About Me
-              <div className="absolute -top-2 -right-2 sm:-right-8 text-[#FFCB22] animate-spin-slow">
+              <div className="absolute -top-2 -right-2 sm:-right-8 text-[var(--color-accent)] animate-spin-slow">
                 <Sparkles size={22} />
               </div>
             </h1>
 
-            <div className="h-1 bg-gradient-to-r from-transparent via-[#FFCB22] to-transparent rounded-full mx-auto w-[120px] sm:w-[200px] transition-all duration-700 ease-out"></div>
+            <div className="h-1 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent rounded-full mx-auto w-[120px] sm:w-[200px] transition-all duration-700 ease-out"></div>
           </div>
 
           {/* Glassmorphism Card */}
           <div
-            className={`bg-white/5 backdrop-blur-md rounded-2xl p-5 sm:p-6 md:p-8 border border-white/10 shadow-2xl relative overflow-hidden max-w-3xl mx-auto transition-all duration-700 ease-out ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
+            className={`bg-white/5 backdrop-blur-md rounded-2xl p-5 sm:p-6 md:p-8 border border-white/10 shadow-2xl relative overflow-hidden max-w-3xl mx-auto transition-all duration-700 ease-out ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FFCB22]/5 via-transparent to-transparent rounded-2xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/5 via-transparent to-transparent rounded-2xl"></div>
 
             <div className="relative z-10 space-y-4 sm:space-y-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed sm:leading-loose">
               <p>
                 👋 Hi, I'm{" "}
-                <span className="font-bold text-[#FFCB22]">Rajvani Jatin</span>{" "}
+                <span className="font-bold text-[var(--color-accent)]">Rajvani Jatin</span>{" "}
                 — a passionate Web Developer and Computer Science student. I
                 specialize in creating{" "}
-                <span className="text-[#FFCB22] font-semibold">
+                <span className="text-[var(--color-accent)] font-semibold">
                   user-centric web experiences
                 </span>{" "}
                 that are both beautiful and functional.
@@ -66,7 +64,7 @@ const About = () => {
               <p>
                 I thrive on solving real-world problems through code and
                 building digital products using the{" "}
-                <span className="text-[#FFCB22] font-semibold">MERN stack</span>.
+                <span className="text-[var(--color-accent)] font-semibold">MERN stack</span>.
               </p>
 
               <p>
@@ -76,9 +74,9 @@ const About = () => {
               </p>
 
               <p className="font-semibold">
-                <span className="text-[#FFCB22]">Collaboration</span>,{" "}
-                <span className="text-[#FFCB22]">consistency</span>, and{" "}
-                <span className="text-[#FFCB22]">curiosity</span> are the
+                <span className="text-[var(--color-accent)]">Collaboration</span>,{" "}
+                <span className="text-[var(--color-accent)]">consistency</span>, and{" "}
+                <span className="text-[var(--color-accent)]">curiosity</span> are the
                 principles I work by.
               </p>
             </div>
@@ -87,7 +85,7 @@ const About = () => {
       </section>
 
       {/* Other Sections */}
-      <section className="min-h-screen text-white pt-10 px-6 md:px-3 pb-10 flex flex-col justify-center">
+      <section className="min-h-screen text-[var(--color-text-pri)] pt-10 px-6 md:px-3 pb-10 flex flex-col justify-center">
         <CurrentStatusSection />
       </section>
 

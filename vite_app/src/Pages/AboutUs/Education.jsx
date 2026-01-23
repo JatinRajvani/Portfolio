@@ -81,7 +81,7 @@
 //             description="Focusing on web development, algorithms, data structures, and software engineering principles. Active member of the university's coding club and participant in hackathons."
 //             delay={0.1}
 //           />
-          
+
 //           <EducationCard 
 //             title="Full-Stack Web Development Bootcamp" 
 //             institution="Tech Academy"
@@ -90,7 +90,7 @@
 //             description="Intensive 12-week program covering modern web development technologies including React, Node.js, and MongoDB. Developed multiple full-stack applications as part of the curriculum."
 //             delay={0.3}
 //           />
-          
+
 //           <EducationCard 
 //             title="High School Diploma" 
 //             institution="Science High School"
@@ -99,7 +99,7 @@
 //             description="Graduated with honors, focusing on mathematics and computer science. Led the school's coding club and won regional programming competitions."
 //             delay={0.5}
 //           />
-          
+
 //           <EducationCard 
 //             title="AWS Cloud Practitioner Certification" 
 //             institution="Amazon Web Services"
@@ -174,9 +174,8 @@ const FadeIn = ({ children, className = "" }) => {
   return (
     <div
       ref={ref}
-      className={`${className} transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className={`${className} transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
     >
       {children}
     </div>
@@ -190,11 +189,11 @@ const EducationSection = () => {
 
         {/* 🟡 Section Header */}
         <FadeIn className="mb-12 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-yellow-400 relative pb-5 leading-snug">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--color-accent)] relative pb-5 leading-snug">
             🎓 Education
           </h2>
 
-          <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent rounded-full mx-auto mt-2 w-[250px]" />
+          <div className="h-1 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent rounded-full mx-auto mt-2 w-[250px]" />
         </FadeIn>
 
         {/* 🟢 Education Timeline */}
@@ -205,13 +204,13 @@ const EducationSection = () => {
               className="relative group flex flex-col sm:flex-row sm:items-start gap-4 sm:gap-6"
             >
               {/* 🎯 Icon */}
-              <div className="absolute sm:static left-[-1.6rem] sm:left-0 top-1/2 sm:top-[0.5rem] -translate-y-1/2 sm:translate-y-0 transform bg-[#FFCB22] shadow-md rounded-full p-2 sm:p-2.5 z-10">
+              <div className="absolute sm:static left-[-1.6rem] sm:left-0 top-1/2 sm:top-[0.5rem] -translate-y-1/2 sm:translate-y-0 transform bg-[var(--color-accent)] shadow-md rounded-full p-2 sm:p-2.5 z-10">
                 <GraduationCap className="text-white w-5 h-5 sm:w-6 sm:h-6" />
               </div>
 
               {/* 📘 Card */}
               <div className="w-full bg-[#101725] backdrop-blur-md border border-[#110E28] p-4 sm:p-6 md:p-7 rounded-2xl shadow-xl transition duration-200 ease-in-out group-hover:shadow-[0_0_25px_5px_#37BAF5] text-center sm:text-left">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-yellow-300 leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-[var(--color-accent)] leading-tight">
                   {item.degree}
                 </h3>
                 <p className="text-gray-300 font-medium mt-1 sm:mt-2">

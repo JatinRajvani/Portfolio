@@ -9,30 +9,30 @@ const TimelineItem = ({ icon, title, description, isLast = false }) => {
   return (
     <div className="flex flex-col sm:flex-row gap-0 sm:gap-8 group mb-10 sm:mb-10">
       {/* Left: Icon + connector */}
-  <div className="relative flex flex-col items-center sm:items-start min-h-[150px] sm:min-h-[220px]">
+      <div className="relative flex flex-col items-center sm:items-start min-h-[150px] sm:min-h-[220px]">
 
         <motion.div
           className="relative z-10"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.2 }}
         >
-          <div className="absolute inset-0 rounded-full bg-[#FFCB22] opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 rounded-full bg-[var(--color-accent)] opacity-20 blur-md group-hover:opacity-40 transition-opacity duration-300"></div>
 
-          <div className="relative flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#FFCB22] to-[#FFB800] shadow-lg shadow-[#FFCB22]/20 group-hover:shadow-[#FFCB22]/40 transition-all duration-300">
+          <div className="relative flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent)] shadow-lg shadow-[var(--color-accent)]/20 group-hover:shadow-[var(--color-accent)]/40 transition-all duration-300">
             <div className="text-black text-xl sm:text-2xl">{icon}</div>
           </div>
         </motion.div>
 
         {/* Connecting Line */}
-{/* Connecting Line */}
-{!isLast && (
-  <div className="absolute left-1/2 sm:left-8 w-[3px] h-[calc(100%+4rem)] bg-gradient-to-b from-[#FFCB22]/70 via-gray-700/60 to-gray-800 -translate-x-1/2 blur-[0.5px]"></div>
-)}
+        {/* Connecting Line */}
+        {!isLast && (
+          <div className="absolute left-1/2 sm:left-8 w-[3px] h-[calc(100%+4rem)] bg-gradient-to-b from-[var(--color-accent)]/70 via-gray-700/60 to-gray-800 -translate-x-1/2 blur-[0.5px]"></div>
+        )}
 
-{/* 🔸 Show line for last item only on mobile */}
-{isLast && (
-  <div className="absolute left-1/2 w-[3px] h-[calc(100%+4rem)] bg-gradient-to-b from-[#FFCB22]/70 via-gray-700/60 to-gray-800 -translate-x-1/2 blur-[0.5px] sm:hidden"></div>
-)}
+        {/* 🔸 Show line for last item only on mobile */}
+        {isLast && (
+          <div className="absolute left-1/2 w-[3px] h-[calc(100%+4rem)] bg-gradient-to-b from-[var(--color-accent)]/70 via-gray-700/60 to-gray-800 -translate-x-1/2 blur-[0.5px] sm:hidden"></div>
+        )}
 
 
 
@@ -40,15 +40,15 @@ const TimelineItem = ({ icon, title, description, isLast = false }) => {
 
       {/* Right: Content */}
       <div className="flex-1">
-        <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-xl p-5 sm:p-6 hover:border-[#FFCB22]/30 hover:bg-gray-800/60 transition-all duration-300">
-          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-[#FFCB22] transition-colors duration-300">
+        <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-xl p-5 sm:p-6 hover:border-[var(--color-accent)]/30 hover:bg-gray-800/60 transition-all duration-300">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 group-hover:text-[var(--color-accent)] transition-colors duration-300">
             {title}
           </h3>
 
           <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-lg">
             {description.split("**").map((part, i) =>
               i % 2 === 1 ? (
-                <span key={i} className="font-semibold text-[#FFCB22]">
+                <span key={i} className="font-semibold text-[var(--color-accent)]">
                   {part}
                 </span>
               ) : (
@@ -59,7 +59,7 @@ const TimelineItem = ({ icon, title, description, isLast = false }) => {
 
           {/* Underline animation */}
           <motion.div
-            className="mt-4 h-1 bg-gradient-to-r from-[#FFCB22] via-transparent to-transparent rounded-full w-0 group-hover:w-3/5 transition-all duration-500"
+            className="mt-4 h-1 bg-gradient-to-r from-[var(--color-accent)] via-transparent to-transparent rounded-full w-0 group-hover:w-3/5 transition-all duration-500"
           />
         </div>
       </div>
@@ -107,10 +107,10 @@ const CurrentStatusSection = ({ id }) => {
         <div className="max-w-5xl w-full">
           {/* Section Header */}
           <div className="text-center mb-14 sm:mb-16 flex flex-col items-center relative">
-            <div className="absolute inset-0 bg-gradient-radial from-[#FFCB22]/5 via-transparent to-transparent rounded-full blur-3xl scale-150"></div>
+            <div className="absolute inset-0 bg-gradient-radial from-[var(--color-accent)]/5 via-transparent to-transparent rounded-full blur-3xl scale-150"></div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 relative">
-              <span className="text-[#FFCB22] drop-shadow-lg">What I'm Up To</span>
+              <span className="text-[var(--color-accent)] drop-shadow-lg">What I'm Up To</span>
               <br />
               <span className="text-white text-2xl sm:text-3xl md:text-4xl">Right Now</span>
             </h2>
@@ -120,7 +120,7 @@ const CurrentStatusSection = ({ id }) => {
               ongoing projects, and goals I'm working towards.
             </p>
 
-            <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-[#FFCB22] to-transparent rounded-full w-[180px] sm:w-[220px] transition-all duration-700"></div>
+            <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent rounded-full w-[180px] sm:w-[220px] transition-all duration-700"></div>
           </div>
 
           {/* Timeline Items */}

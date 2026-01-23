@@ -106,48 +106,48 @@ const Sidebar = () => {
       {/* Backdrop Overlay */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden backdrop-blur-sm"
           onClick={() => setOpen(false)}
         ></div>
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar - Obsidian Gold Style */}
       <div
         className={`
-          fixed top-0 left-0 h-full text-white z-50
+          fixed top-0 left-0 h-full text-[var(--color-text-pri)] z-50
           transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}
           w-25 pt-5 pl-3 pb-4
           lg:translate-x-0 lg:relative lg:w-[6%]
           flex flex-col gap-4
+          /* Removed global border/bg to allow separate blocks */
         `}
       >
-        {/* Logo */}
-        <div className="h-[90px] bg-yellow-400 flex items-center justify-center rounded-sm text-2xl text-white">
-          <h1 className="w-[70px] h-[70px] bg-[var(--color-accent)] flex items-center justify-center font-semibold">
+        {/* Logo Block - DISTINCT PART 1 */}
+        <div className="h-[90px] w-full flex items-center justify-center rounded-sm text-2xl text-white border border-white/5 bg-white/[0.02] backdrop-blur-md">
+          <h1 className="w-[70px] h-[70px] bg-gradient-to-br from-amber-600 to-yellow-700 flex items-center justify-center font-bold rounded-lg shadow-lg shadow-amber-900/20 text-white">
             RJ
           </h1>
         </div>
 
-        {/* Navigation */}
-        <div className="bg-[#121212] h-165 rounded-sm flex items-center justify-center">
-          <div className="flex items-center justify-center flex-col gap-12 text-[25px] relative group">
+        {/* Navigation Block - DISTINCT PART 2 */}
+        <div className="flex-1 w-full rounded-sm flex items-center justify-center border border-white/5 bg-white/[0.02] backdrop-blur-md">
+          <div className="flex items-center justify-center flex-col gap-12 text-[25px] relative group h-full py-8">
             {navLinks.map((link, index) => {
               const isActive = location.pathname === link.path;
               return (
                 <div key={index} className="relative group">
                   <Link to={link.path}>
                     <div
-                      className={`cursor-pointer transition-colors duration-200 ${
-                        isActive ? "text-yellow-400" : "text-white"
-                      }`}
+                      className={`cursor-pointer transition-all duration-300 ${isActive ? "text-[var(--color-accent)] scale-110 drop-shadow-[0_0_8px_rgba(217,119,6,0.5)]" : "text-[var(--color-text-sec)] hover:text-white hover:scale-105"
+                        }`}
                     >
                       {link.icon}
                     </div>
                   </Link>
 
                   {/* Tooltip */}
-                  <div className="absolute left-12 top-1/2 -translate-y-1/2 bg-[#222] text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-10">
+                  <div className="absolute left-14 top-1/2 -translate-y-1/2 bg-[var(--color-surface)] text-[var(--color-text-pri)] text-sm px-3 py-1 rounded border border-white/10 opacity-0 group-hover:opacity-100 transition-all duration-200 pointer-events-none whitespace-nowrap z-10 shadow-xl">
                     {link.name}
                   </div>
                 </div>

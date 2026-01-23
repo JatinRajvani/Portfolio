@@ -1,14 +1,32 @@
 @import "tailwindcss";
 
-/* #root{
-background-color: black;
-} */
+:root {
+  --color-bg: #09090b;
+  /* Zinc 950 */
+  --color-surface: #18181b;
+  /* Zinc 900 */
+  --color-accent: #F59E0B;
+  /* Amber 500 (Brighter Gold) */
+  --color-text-pri: #FAFAFA;
+  /* Zinc 50 */
+  --color-text-sec: #A1A1AA;
+  /* Zinc 400 */
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-pri);
+  font-family: 'Inter', sans-serif;
+  /* Adding Inter for cleaner look if available, standard fallbacks otherwise */
+}
 
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
-  
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

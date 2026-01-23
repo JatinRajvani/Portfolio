@@ -44,7 +44,7 @@ const TechStack = () => {
           "Bootstrap",
           "Framer Motion",
         ],
-        icon: <FaCode className="text-yellow-400 text-2xl" />,
+        icon: <FaCode className="text-[var(--color-accent)] text-2xl" />,
       },
       {
         id: "backend",
@@ -57,7 +57,7 @@ const TechStack = () => {
           "JWT Authentication",
           "Auth0",
         ],
-        icon: <FaServer className="text-yellow-400 text-2xl" />,
+        icon: <FaServer className="text-[var(--color-accent)] text-2xl" />,
       },
       {
         id: "database",
@@ -69,21 +69,21 @@ const TechStack = () => {
           "Aggregation Framework",
           "MongoDB Atlas",
         ],
-        icon: <FaDatabase className="text-yellow-400 text-2xl" />,
+        icon: <FaDatabase className="text-[var(--color-accent)] text-2xl" />,
       },
       {
         id: "version-control",
         title: "Version Control & Collaboration",
         description: "For project management and team collaboration:",
         technologies: ["Git", "GitHub", "GitHub Projects / Issues"],
-        icon: <FaGithub className="text-yellow-400 text-2xl" />,
+        icon: <FaGithub className="text-[var(--color-accent)] text-2xl" />,
       },
       {
         id: "design",
         title: "Design & Prototyping",
         description: "To design UI/UX and communicate visuals:",
         technologies: ["Figma", "Canva"],
-        icon: <FaFigma className="text-yellow-400 text-2xl" />,
+        icon: <FaFigma className="text-[var(--color-accent)] text-2xl" />,
       },
       {
         id: "other",
@@ -96,7 +96,7 @@ const TechStack = () => {
           "Netlify / Vercel / Render",
           "Local Storage / Session Storage",
         ],
-        icon: <FaTools className="text-yellow-400 text-2xl" />,
+        icon: <FaTools className="text-[var(--color-accent)] text-2xl" />,
       },
     ],
     []
@@ -105,23 +105,22 @@ const TechStack = () => {
   return (
     <section
       ref={sectionRef}
-      className={`w-full py-16 sm:py-20 bg-transparent transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className={`w-full py-16 sm:py-20 bg-transparent transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
       aria-label="Tech Stack Section"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-[#FFCB22] drop-shadow-lg">Tech</span>{" "}
+            <span className="text-[var(--color-accent)] drop-shadow-lg">Tech</span>{" "}
             <span className="text-white">Stack</span>
           </h2>
           <p className="text-gray-300 max-w-3xl text-base md:text-lg leading-relaxed mx-auto">
             The tools, technologies, and frameworks I use to design, build, and
             deploy powerful web applications.
           </p>
-          <div className="mt-8 h-1 bg-gradient-to-r from-transparent via-[#FFCB22] to-transparent rounded-full mx-auto w-[200px]" />
+          <div className="mt-8 h-1 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent rounded-full mx-auto w-[200px]" />
         </div>
 
         {/* Tech Stack Cards */}
@@ -130,13 +129,13 @@ const TechStack = () => {
             <div
               key={category.id}
               className="bg-gray-900 bg-opacity-50 border border-gray-800 rounded-xl p-6 sm:p-8 
-                         hover:border-yellow-400 hover:border-opacity-30 transition-all duration-300 
+                         hover:border-[var(--color-accent)] hover:border-opacity-30 transition-all duration-300 
                          transform hover:-translate-y-1 hover:shadow-lg"
             >
               {/* Title + Icon */}
               <div className="flex items-center mb-4">
                 <div className="mr-3 flex-shrink-0">{category.icon}</div>
-                <h3 className="text-xl font-semibold text-yellow-400">
+                <h3 className="text-xl font-semibold text-[var(--color-accent)]">
                   {category.title}
                 </h3>
               </div>
