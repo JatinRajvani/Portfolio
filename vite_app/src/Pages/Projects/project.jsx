@@ -539,22 +539,21 @@ export default function Projects() {
         </motion.div>
 
         {/* Filter Buttons */}
-        <div className="flex items-center justify-between bg-gray-900 border border-gray-700 rounded-full px-3 py-2 shadow-lg max-w-xl mx-auto mb-16">
-          <div className="flex items-center gap-2">
-            <Filter className="text-[#F59E0B] w-5 h-5" />
-            <span className="text-gray-400 text-sm font-medium">Filter</span>
+        <div className="flex items-center justify-center sm:justify-center bg-gradient-to-r from-gray-900/80 via-gray-800/80 to-gray-900/80 backdrop-blur-md border border-gray-700/50 rounded-xl px-4 sm:px-6 py-4 sm:py-3.5 shadow-lg sm:w-fit mx-auto mb-16 gap-4 sm:gap-3 flex-wrap">
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <Filter className="text-[#F59E0B] w-4 h-4" />
+            <span className="text-gray-400 text-xs sm:text-sm font-semibold whitespace-nowrap">Filter By:</span>
           </div>
-          <div className="flex gap-1 sm:gap-2 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-2 sm:gap-2.5 flex-wrap justify-center w-full sm:w-auto">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 
-                  ${
-                    selectedCategory === cat
-                      ? "bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black shadow"
-                      : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-                  }`}
+                className={`px-4 sm:px-4 py-2 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
+                  selectedCategory === cat
+                    ? "bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black shadow-lg shadow-[#F59E0B]/50 font-bold"
+                    : "bg-gray-800/70 text-gray-300 hover:bg-gray-700/90 hover:text-[#F59E0B] border border-gray-700/60 hover:border-[#F59E0B]/60 hover:shadow-md hover:shadow-[#F59E0B]/20"
+                }`}
               >
                 {cat}
               </button>
@@ -737,7 +736,7 @@ export default function Projects() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-2 sm:px-4 py-4 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-2 sm:px-4 py-4 overflow-y-auto pt-[75px] sm:pt-0"
       style={{ backdropFilter: "blur(12px)" }}
       onClick={() => setSelectedProject(null)}
     >
@@ -750,43 +749,43 @@ export default function Projects() {
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex justify-between items-center bg-gradient-to-r from-gray-800 to-gray-700 px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-700/40 ">
-          {/* Left: Navigation */}
-          <div className="flex items-center gap-2">
+        <div className="flex justify-between items-center bg-gradient-to-r from-gray-800 to-gray-700 px-3 sm:px-6 py-3 sm:py-4 border-b border-gray-700/40 gap-2 sm:gap-2">
+          {/* Left: Navigation - Show on all sizes */}
+          <div className="flex items-center gap-2 sm:gap-2">
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={handlePrevious}
               disabled={projectIndex === 0}
-              className="p-2 rounded-lg bg-gray-700/50 hover:bg-[#F59E0B]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="p-2 sm:p-2 rounded-lg bg-gray-700/50 hover:bg-[#F59E0B]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
-              <ChevronLeft className="w-5 h-5 text-gray-300 hover:text-[#F59E0B]" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300 hover:text-[#F59E0B]" />
             </motion.button>
-            <span className="text-xs sm:text-sm text-gray-400 bg-gray-900/40 px-2 py-1 rounded-lg font-medium">
-              {projectIndex + 1} / {projects.length}
+            <span className="text-xs text-gray-400 bg-gray-900/40 px-2 sm:px-2 py-1 sm:py-1 rounded-lg font-medium whitespace-nowrap">
+              {projectIndex + 1}/{projects.length}
             </span>
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleNext}
               disabled={projectIndex === projects.length - 1}
-              className="p-2 rounded-lg bg-gray-700/50 hover:bg-[#F59E0B]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+              className="p-2 sm:p-2 rounded-lg bg-gray-700/50 hover:bg-[#F59E0B]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             >
-              <ChevronRight className="w-5 h-5 text-gray-300 hover:text-[#F59E0B]" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300 hover:text-[#F59E0B]" />
             </motion.button>
           </div>
 
           {/* Center: Title */}
-          <div className="truncate flex-1 mx-4">
+          <div className="sm:truncate flex-1 mx-1 sm:mx-4 min-w-0">
             <motion.h2
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.15 }}
-              className="text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-[#F59E0B] to-[#D97706] bg-clip-text text-transparent"
+              className="text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-[#F59E0B] to-[#D97706] bg-clip-text text-transparent line-clamp-2"
             >
               {selectedProject.title}
             </motion.h2>
-            <p className="text-gray-400 text-xs sm:text-sm">
+            <p className="text-gray-400 text-xs sm:text-sm hidden sm:block truncate">
               {selectedProject.category || "Web Application"}
             </p>
           </div>
@@ -794,19 +793,19 @@ export default function Projects() {
           {/* Right: Close Button */}
           <motion.button
             onClick={() => setSelectedProject(null)}
-            className="p-2 rounded-full bg-gray-700/50 hover:bg-red-500/20 transition-all duration-300 group"
+            className="p-2 sm:p-2 rounded-full bg-gray-700/50 hover:bg-red-500/20 transition-all duration-300 group flex-shrink-0"
           >
             <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-red-400" />
           </motion.button>
         </div>
 
         {/* Body */}
-        <div className="p-3 sm:p-5 md:p-6 flex-1 will-change-scroll">
+        <div className="p-3 sm:p-5 md:p-6 flex-1 will-change-scroll overflow-y-auto sm:overflow-y-hidden">
           <div className="flex flex-col lg:flex-row gap-5 md:gap-6">
             {/* Left */}
             <div className="w-full lg:w-2/5 space-y-5 md:space-y-6">
               {selectedProject.video ? (
-                <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md">
+                <div className="aspect-video sm:aspect-video w-full rounded-xl overflow-hidden shadow-md max-h-[220px] sm:max-h-none">
                   <iframe
                     src={selectedProject.video}
                     title={selectedProject.title}
@@ -818,7 +817,7 @@ export default function Projects() {
                 <img
                   src={selectedProject.img}
                   alt={selectedProject.title}
-                  className="w-full h-auto max-h-64 sm:max-h-72 md:max-h-80 object-cover rounded-xl shadow-md"
+                  className="w-full h-auto max-h-[220px] sm:max-h-64 md:max-h-72 lg:max-h-80 object-cover rounded-xl shadow-md"
                 />
               )}
 
@@ -840,16 +839,16 @@ export default function Projects() {
               </div>
 
               {/* Buttons */}
-              <div className="flex flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <motion.a
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href={selectedProject.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black font-semibold py-3 rounded-lg hover:shadow-lg hover:shadow-[#F59E0B]/40 transition-all"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:shadow-lg hover:shadow-[#F59E0B]/40 transition-all text-sm sm:text-base"
                 >
-                  <ExternalLink className="w-5 h-5" />
+                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
                   View Live Project
                 </motion.a>
                 <motion.a
@@ -858,9 +857,9 @@ export default function Projects() {
                   href={selectedProject.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-gray-700/80 backdrop-blur-sm text-white font-semibold py-3 rounded-lg hover:bg-gray-600 border border-gray-600/50 transition-all"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gray-700/80 backdrop-blur-sm text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gray-600 border border-gray-600/50 transition-all text-sm sm:text-base"
                 >
-                  <Github className="w-5 h-5" />
+                  <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                   View Source Code
                 </motion.a>
               </div>
@@ -874,7 +873,7 @@ export default function Projects() {
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg ${
+                    className={`flex-1 sm:flex-none px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg ${
                       activeTab === tab
                         ? "bg-[#F59E0B] text-black shadow-md"
                         : "text-gray-300 hover:bg-gray-700/50"
@@ -886,7 +885,7 @@ export default function Projects() {
               </div>
 
               {/* Tab Content */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-5 border border-gray-700/30 text-sm sm:text-base leading-relaxed text-gray-300 max-h-[calc(90vh-210px)] overflow-y-auto">
+              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-5 border border-gray-700/30 text-sm sm:text-base leading-relaxed text-gray-300 space-y-4 sm:max-h-[calc(90vh-210px)] sm:overflow-y-auto">
                 {activeTab === "Project Details" && (
                   <div className="space-y-6">
                     {/* Problem */}
