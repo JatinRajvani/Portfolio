@@ -124,7 +124,7 @@ const Sidebar = () => {
         `}
       >
         {/* Logo Block - DISTINCT PART 1 */}
-        <div className="h-[90px] w-full flex items-center justify-center rounded-sm text-2xl text-white border border-white/5 bg-white/[0.02] backdrop-blur-md">
+        <div className="h-[90px] w-full flex items-center justify-center rounded-sm text-2xl text-white   backdrop-blur-md">
           <h1 className="w-[70px] h-[70px] bg-gradient-to-br from-amber-600 to-yellow-700 flex items-center justify-center font-bold rounded-lg shadow-lg shadow-amber-900/20 text-white">
             RJ
           </h1>

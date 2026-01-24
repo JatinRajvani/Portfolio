@@ -5,9 +5,10 @@ import Sidebar from './Components/Sidebar';
 import StarField from './Components/StarsFile.jsx';
 import MainProject from "./Pages/Projects/Mainproject.jsx";
 import Maincertificatesection from './Pages/certificates/maincertificate.jsx';
-import Maincontactsection from './Pages/Contact/Maincontact.jsx';
+import MainContact from './Pages/Contact/Maincontact.jsx';
 import MainResumePage from './Pages/Resume/Mainresume.jsx';
 import DesignDemo from './Pages/DesignDemo.jsx';
+import MainAbout from './Pages/AboutUs/MainAbout.jsx';
 function Layout() {
   return (
     <BrowserRouter>
@@ -27,11 +28,11 @@ function Layout() {
         >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<StarField />} />
+            <Route path="/about" element={<MainAbout />} />
             <Route path="/stars" element={<StarField />} />
             <Route path="/projects" element={<MainProject />} />
             <Route path="/certificates" element={<Maincertificatesection />} />
-            <Route path="/contact" element={<Maincontactsection />} />
+            <Route path="/contact" element={<MainContact />} />
             <Route path="/resume" element={<MainResumePage />} />
             <Route path="/demo" element={<DesignDemo />} />
           </Routes>

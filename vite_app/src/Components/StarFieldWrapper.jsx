@@ -1,17 +1,14 @@
 import React, { useEffect, useRef } from 'react';
-import About from '../Pages/AboutUs/About.jsx'
+
 const generateStars = (num, width, height) => {
   const stars = [];
   for (let i = 0; i < num; i++) {
-    // Obsidian Mode: Brighter Gold/White for visibility
-    const opacity = Math.random() * 0.8 + 0.3; // 0.3 to 1.0 opacity (much brighter)
-    const color = Math.random() > 0.7 ? `rgba(251, 191, 36, ${opacity})` : `rgba(255, 255, 255, ${opacity})`; // Amber-400 (Brighter Gold) or White
-    stars.push(`${Math.floor(Math.random() * width)}px ${Math.floor(Math.random() * height)}px ${color}`);
+    stars.push(`${Math.floor(Math.random() * width)}px ${Math.floor(Math.random() * height)}px #FFF`);
   }
   return stars.join(', ');
 };
 
-const StarField = ({children}) => {
+const StarFieldWrapper = ({ children }) => {
   const starsRef = useRef();
   const stars1Ref = useRef();
   const stars2Ref = useRef();
@@ -21,22 +18,21 @@ const StarField = ({children}) => {
     const width = 2560;
     const height = 2560;
 
-    // Reduced star count for cleaner look
     if (starsRef.current)
-      starsRef.current.style.boxShadow = generateStars(900, width, height);
+      starsRef.current.style.boxShadow = generateStars(1700, width, height);
 
     if (stars1Ref.current)
-      stars1Ref.current.style.boxShadow = generateStars(400, width, height);
+      stars1Ref.current.style.boxShadow = generateStars(700, width, height);
 
     if (stars2Ref.current)
-      stars2Ref.current.style.boxShadow = generateStars(100, width, height);
+      stars2Ref.current.style.boxShadow = generateStars(200, width, height);
 
     if (shootingStarsRef.current)
-      shootingStarsRef.current.style.boxShadow = generateStars(5, width, height); // Fewer shooting stars
+      shootingStarsRef.current.style.boxShadow = generateStars(10, width, height);
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-[#09090b]">
+    <div className="relative w-full h-screen bg-gradient-to-b from-[#09090b] to-[#201b46]">
       <div className="absolute text-white font-bold text-lg font-sans z-20 w-full h-screen overflow-y-auto scrollbar-hide">
         {children}
       </div>
@@ -58,7 +54,7 @@ const StarField = ({children}) => {
 
       <div
         ref={shootingStarsRef}
-        className="absolute top-0 left-0 w-[5px] h-[85px] animate-shooting-star bg-gradient-to-t from-transparent to-amber-200/50 rounded-t-full z-10"
+        className="absolute top-0 left-0 w-[5px] h-[85px] animate-shooting-star bg-gradient-to-t from-transparent to-white rounded-t-full z-10"
       ></div>
 
       <style>{`
@@ -74,40 +70,36 @@ const StarField = ({children}) => {
         @keyframes animShootingStar {
           from {
             transform: translateY(0px) translateX(0px) rotate(-45deg);
-            opacity: 0;
+            opacity: 1;
             height: 5px;
           }
           to {
             transform: translateY(-2560px) translateX(-2560px) rotate(-45deg);
-            opacity: 0.5;
+            opacity: 1;
             height: 800px;
           }
         }
       `}</style>
 
       <style jsx>{`
-        /* Slowed down animations by 2.5x for calming effect */
         .animate-star {
-          animation: animStar 250s linear infinite;
+          animation: animStar 100s linear infinite;
         }
 
         .animate-star-slow {
-          animation: animStar 300s linear infinite;
+          animation: animStar 125s linear infinite;
         }
 
         .animate-star-slower {
-          animation: animStar 450s linear infinite;
+          animation: animStar 175s linear infinite;
         }
 
         .animate-shooting-star {
-          animation: animShootingStar 25s linear infinite; 
+          animation: animShootingStar 10s linear infinite;
         }
       `}</style>
     </div>
-
-
   );
 };
 
-export default StarField;
-
+export default StarFieldWrapper;

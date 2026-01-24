@@ -1,13 +1,13 @@
 import React from 'react';
 import StarField from '../../Components/StarsFile';
-import Certificate from './Certificate';
+import About from './About';
 
-const MainCertificate = () => {
+const MainAbout = () => {
   return (
     <StarField>
-      <Certificate />
+      <About />
     </StarField>
   );
 };
 
-export default MainCertificate;
+export default MainAbout;
