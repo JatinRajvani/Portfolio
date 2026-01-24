@@ -6,8 +6,10 @@ import TiltedCard from "../../Components/Design/TitleCard.jsx";
 const projects = [
   {
     title: "Attendance and Payroll Management App",
+    role: "Full-Stack Developer",
+    contributor: "Team: 2 Members",
     description:
-      "A full-stack web application for managing employee attendance, leaves, holidays, and payroll processing.",
+      "Reduced payroll processing time by 80% with dual-dashboard system for 100+ employees.",
     briefdescription:
       "A full-stack web application designed to simplify employee management. It provides separate dashboards for HR/Admin and Employees, ensuring smooth handling of attendance, leave requests, holidays, and payroll generation. The system automates salary calculations, reduces manual errors, and improves workforce efficiency.",
     techindetails: [
@@ -24,6 +26,7 @@ const projects = [
       "PDFKit / ReportLab"
     ],
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
+    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757874895/AP2_rkekgb.png",
     github: "https://github.com/aryapatel23/Attendance-and-Payroll-Management",
     live: "https://attendance-and-payroll-management.vercel.app/",
@@ -59,8 +62,10 @@ const projects = [
   },
   {
     title: "Homy – Hostel & Lifestyle Platform",
+    role: "Full-Stack Developer",
+    contributor: "Team: 2 Members",
     description:
-      "A full-stack platform that helps students, working professionals, and travelers find suitable hostels, PGs, homes, meals, transportation, and a community to connect with others.",
+      "One-stop platform connecting 500+ users with hostels, meals, transport & community.",
     briefdescription:
       "Homy is designed to make city living easier for students and professionals. It provides a one-stop solution to discover hostels/PGs with detailed information, book homemade meal services, explore transportation options, and connect with others in the community.",
     techindetails: [
@@ -77,6 +82,7 @@ const projects = [
       "RESTful API"
     ],
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
+    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757956095/20250915_2230_Homy_App_Features_remix_01k5751pnwe3293hvc24xw7w2x_3_y2tkj4.png",
     github: "https://github.com/JatinRajvani/homy",
     live: "https://homy-phev.vercel.app/",
@@ -125,8 +131,10 @@ const projects = [
   },
   {
     title: "EcoHubs – Second-Hand Ecommerce Platform",
+    role: "Full-Stack Developer",
+    contributor: "Team: 4 Members",
     description:
-      "A marketplace for buying and selling second-hand products with authentication, cart functionality, and product management features.",
+      "Sustainable e-commerce platform enabling 200+ users to buy/sell second-hand products.",
     briefdescription:
       "EcoHubs allows users to securely buy and sell used products online, promoting sustainable consumption. It includes user authentication, product listings with images, cart management, and seller controls.",
     techindetails: [
@@ -141,6 +149,7 @@ const projects = [
       "RESTful API"
     ],
     tech: ["React", "Vite", "Node.js", "MongoDB"],
+    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758051396/ecohubsimg_zzaglv.png",
     github: "https://github.com/JatinRajvani/odooxnmit",
     live: "https://ecofinds-second-hand.netlify.app/",
@@ -187,11 +196,14 @@ const projects = [
   },
   {
     title: "Rental Management",
-    description: "A modern UI kit built in Figma and implemented in React.",
+    role: "UI/UX Developer",
+    contributor: "Solo Project",
+    description: "Modern UI kit with 30+ reusable React components for rental platforms.",
     briefdescription:
       "Rental Management UI kit designed for landlords and tenants to manage properties, rent details, and communication efficiently.",
     techindetails: ["Figma", "React", "Tailwind CSS"],
     tech: ["Figma", "React", "Tailwind"],
+    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
     github: "https://github.com/yourusername/ui-kit",
     live: "https://your-live-demo-link.com",
@@ -214,8 +226,10 @@ const projects = [
   },
   {
     title: "YouTube Clone – Video Streaming Platform",
+    role: "Frontend Developer",
+    contributor: "Solo Project",
     description:
-      "A React-based video streaming app replicating core YouTube features using the YouTube API.",
+      "Real-time video streaming app with 10K+ videos indexed and infinite scroll.",
     briefdescription:
       "This YouTube Clone integrates the YouTube API to display real-time videos, supports search, infinite scrolling, and responsive video playback.",
     techindetails: [
@@ -225,6 +239,7 @@ const projects = [
       "REST API integration"
     ],
     tech: ["React", "Vite", "CSS", "YouTube API"],
+    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758200202/yt-colne_image_iiybpo.png",
     github: "https://github.com/JatinRajvani/Clone-using-React",
     live: "https://thriving-phoenix-8688f2.netlify.app/",
@@ -400,7 +415,7 @@ export default function Projects() {
         >
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white">
             My{" "}
-            <span className="bg-gradient-to-r from-[#FDC700] to-[#ff9800] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#F59E0B] to-[#D97706] bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -412,7 +427,7 @@ export default function Projects() {
         {/* Filter Buttons */}
         <div className="flex items-center justify-between bg-gray-900 border border-gray-700 rounded-full px-3 py-2 shadow-lg max-w-xl mx-auto mb-16">
           <div className="flex items-center gap-2">
-            <Filter className="text-[#FDC700] w-5 h-5" />
+            <Filter className="text-[#F59E0B] w-5 h-5" />
             <span className="text-gray-400 text-sm font-medium">Filter</span>
           </div>
           <div className="flex gap-1 sm:gap-2 overflow-x-auto scrollbar-hide">
@@ -423,7 +438,7 @@ export default function Projects() {
                 className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 
                   ${
                     selectedCategory === cat
-                      ? "bg-gradient-to-r from-[#FDC700] to-[#ff9800] text-black shadow"
+                      ? "bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black shadow"
                       : "bg-gray-800 text-gray-300 hover:bg-gray-700"
                   }`}
               >
@@ -437,81 +452,164 @@ export default function Projects() {
         <div className="grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3 place-items-center">
           {filteredProjects.map((project, index) => (
             <div key={index} className="w-full flex justify-center">
-              {/* Desktop View (Hover Cards) */}
-              <div className="hidden sm:block">
-                <TiltedCard
-                  captionText={project.title}
-                  containerHeight="350px"
-                  containerWidth="360px"
-                  imageHeight="350px"
-                  imageWidth="360px"
-                  rotateAmplitude={10}
-                  scaleOnHover={1.05}
-                  showMobileWarning={false}
-                  showTooltip={false}
-                >
-                  <div className="relative w-[360px] h-[350px] group overflow-hidden rounded-xl">
+              {/* Desktop View - Simple Card */}
+              <div className="hidden sm:block w-full max-w-sm h-[560px]">
+                <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col gap-4">
+                  
+                  {/* Inner Card - Image/Video */}
+                  <div className="relative w-full h-60 group overflow-hidden bg-black rounded-xl border border-gray-700/30">
                     <img
                       src={project.img}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-300"
                     />
-                    <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 space-y-4">
-                      <h3 className="text-xl font-bold text-[#FDC700] text-center">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm text-center">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 justify-center">
-                        {project.tech.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="bg-[#FDC700] text-black text-xs px-3 py-1 rounded-full"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                    {project.video && (
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <iframe
+                          src={project.video}
+                          title={project.title}
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
                       </div>
+                    )}
+                  </div>
+
+                  {/* Inner Card - Content */}
+                  <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/30 rounded-xl p-4 flex flex-col gap-3 flex-1">
+                    {/* Role & Contributor Badges */}
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="bg-[#F59E0B]/15 text-[#F59E0B] text-xs px-2.5 py-1 rounded-md border border-[#F59E0B]/30 font-medium">
+                        👤 {project.role}
+                      </span>
+                      <span className="bg-gray-700/40 text-gray-300 text-xs px-2.5 py-1 rounded-md border border-gray-600/30">
+                        👥 {project.contributor}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-[#F59E0B] line-clamp-2">
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-300 text-base line-clamp-2">
+                      {project.description}
+                    </p>
+
+                    {/* Meta Info */}
+                    <div className="flex gap-3 text-xs text-gray-400 flex-wrap">
+                      <span>📅 {project.duration}</span>
+                      <span>✅ {project.status}</span>
+                    </div>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.slice(0, 3).map((tech, i) => (
+                        <span
+                          key={i}
+                          className="bg-[#F59E0B]/20 text-[#F59E0B] text-xs px-2 py-1 rounded-lg border border-[#F59E0B]/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex gap-2 mt-auto">
                       <button
                         onClick={() => setSelectedProject(project)}
-                        className="mt-2 bg-[#FDC700] text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-400 transition"
+                        className="flex-1 bg-[#F59E0B] text-black px-3 py-2 rounded-lg font-semibold hover:bg-amber-500 transition text-sm"
                       >
                         View Project
                       </button>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-gray-700/50 text-white px-3 py-2 rounded-lg font-semibold hover:bg-gray-600 transition flex items-center justify-center gap-1 text-sm border border-gray-600/50"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </a>
                     </div>
                   </div>
-                </TiltedCard>
+                </div>
               </div>
 
-              {/* Mobile View (Static Cards) */}
-              <div className="block sm:hidden w-full max-w-sm bg-gray-900 border border-gray-700 rounded-2xl overflow-hidden shadow-lg">
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  className="w-full h-52 object-cover"
-                />
-                <div className="p-4 flex flex-col gap-3">
-                  <h3 className="text-lg font-bold text-[#FDC700]">{project.title}</h3>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.slice(0, 3).map((tech, i) => (
-                      <span
-                        key={i}
-                        className="bg-[#FDC700]/80 text-black text-xs px-2 py-1 rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+              {/* Mobile View - Nested Card Design (Matching Desktop) */}
+              <div className="block sm:hidden w-full max-w-sm h-[560px]">
+                <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col gap-4">
+                  
+                  {/* Inner Card - Image */}
+                  <div className="relative w-full h-48 overflow-hidden bg-black rounded-xl border border-gray-700/30">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="w-full mt-2 bg-[#FDC700] text-black font-semibold py-2 rounded-lg hover:bg-yellow-400 transition-all"
-                  >
-                    View Project
-                  </button>
+
+                  {/* Inner Card - Content */}
+                  <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/30 rounded-xl p-4 flex flex-col gap-3 flex-1">
+                    {/* Role & Contributor Badges */}
+                    <div className="flex gap-2 flex-wrap">
+                      <span className="bg-[#F59E0B]/15 text-[#F59E0B] text-xs px-2.5 py-1 rounded-md border border-[#F59E0B]/30 font-medium">
+                        👤 {project.role}
+                      </span>
+                      <span className="bg-gray-700/40 text-gray-300 text-xs px-2.5 py-1 rounded-md border border-gray-600/30">
+                        👥 {project.contributor}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-[#F59E0B] line-clamp-2">
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-gray-300 text-base line-clamp-2">
+                      {project.description}
+                    </p>
+
+                    {/* Meta Info */}
+                    <div className="flex gap-3 text-xs text-gray-400 flex-wrap">
+                      <span>📅 {project.duration}</span>
+                      <span>✅ {project.status}</span>
+                    </div>
+
+                    {/* Tech Stack */}
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.slice(0, 3).map((tech, i) => (
+                        <span
+                          key={i}
+                          className="bg-[#F59E0B]/20 text-[#F59E0B] text-xs px-2 py-1 rounded-lg border border-[#F59E0B]/30"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Buttons */}
+                    <div className="flex gap-2 mt-auto">
+                      <button
+                        onClick={() => setSelectedProject(project)}
+                        className="flex-1 bg-[#F59E0B] text-black px-3 py-2 rounded-lg font-semibold hover:bg-amber-500 transition text-sm"
+                      >
+                        View Project
+                      </button>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 bg-gray-700/50 text-white px-3 py-2 rounded-lg font-semibold hover:bg-gray-600 transition flex items-center justify-center gap-1 text-sm border border-gray-600/50"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -543,7 +641,7 @@ export default function Projects() {
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.15 }}
-              className="text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-[#FDC700] to-yellow-300 bg-clip-text text-transparent"
+              className="text-base sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-[#F59E0B] to-[#D97706] bg-clip-text text-transparent"
             >
               {selectedProject.title}
             </motion.h2>
@@ -584,7 +682,7 @@ export default function Projects() {
 
               {/* Project Info */}
               <div className="bg-gray-800/40 p-4 rounded-xl border border-gray-700/30 text-sm sm:text-base">
-                <h3 className="text-[#FDC700] font-semibold mb-3 text-base sm:text-lg">
+                <h3 className="text-[#F59E0B] font-semibold mb-3 text-base sm:text-lg">
                   Project Info
                 </h3>
                 <div className="space-y-2 text-gray-300">
@@ -610,7 +708,7 @@ export default function Projects() {
                     onClick={() => setActiveTab(tab)}
                     className={`flex-1 sm:flex-none px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold rounded-lg ${
                       activeTab === tab
-                        ? "bg-[#FDC700] text-black shadow-md"
+                        ? "bg-[#F59E0B] text-black shadow-md"
                         : "text-gray-300 hover:bg-gray-700/50"
                     }`}
                   >
@@ -623,7 +721,7 @@ export default function Projects() {
               <div className="bg-gray-800/30 rounded-xl p-4 sm:p-5 border border-gray-700/30 text-sm sm:text-base leading-relaxed text-gray-300">
                 {activeTab === "Project Details" && (
                   <>
-                    <h3 className="text-[#FDC700] font-semibold mb-2 sm:mb-3 text-base sm:text-lg">
+                    <h3 className="text-[#F59E0B] font-semibold mb-2 sm:mb-3 text-base sm:text-lg">
                       About This Project
                     </h3>
                     <p>{selectedProject.briefdescription}</p>
@@ -634,7 +732,7 @@ export default function Projects() {
                     {selectedProject.techindetails.map((tech, i) => (
                       <span
                         key={i}
-                        className="bg-[#FDC700] text-black px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
+                        className="bg-[#F59E0B] text-black px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
                       >
                         {tech}
                       </span>
@@ -646,7 +744,7 @@ export default function Projects() {
     {selectedProject.features?.map((feature, index) => (
       <div key={index}>
         {/* Role Title */}
-        <h4 className="text-[#FDC700] font-semibold text-base sm:text-lg mb-2">
+        <h4 className="text-[#F59E0B] font-semibold text-base sm:text-lg mb-2">
           {feature.role}
         </h4>
 
@@ -669,7 +767,7 @@ export default function Projects() {
                   href={selectedProject.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#FDC700] text-black font-semibold py-2 sm:py-3 rounded-lg hover:bg-yellow-400 transition"
+                  className="flex-1 flex items-center justify-center gap-2 bg-[#F59E0B] text-black font-semibold py-2 sm:py-3 rounded-lg hover:bg-amber-500 transition"
                 >
                   <ExternalLink className="w-4 h-4" />
                   View Project
