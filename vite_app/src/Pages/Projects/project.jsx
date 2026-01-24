@@ -1,8 +1,26 @@
 import { useState } from "react";
 import { motion,AnimatePresence } from "framer-motion";
-import { Github, ExternalLink ,Filter,X} from "lucide-react";
+import { Github, ExternalLink, Filter, X, ChevronLeft, ChevronRight, Zap, Database, Code, Palette, Server, Cpu } from "lucide-react";
 import TiltedCard from "../../Components/Design/TitleCard.jsx";
 import "./project.css";
+
+// Tech icon mapping
+const techIcons = {
+  "React": <Code className="w-4 h-4" />,
+  "Vite": <Zap className="w-4 h-4" />,
+  "Node.js": <Server className="w-4 h-4" />,
+  "MongoDB": <Database className="w-4 h-4" />,
+  "Redux": <Cpu className="w-4 h-4" />,
+  "Redux Toolkit": <Cpu className="w-4 h-4" />,
+  "Tailwind CSS": <Palette className="w-4 h-4" />,
+  "JWT": <Code className="w-4 h-4" />,
+  "Cloudinary": <Database className="w-4 h-4" />,
+  "Framer Motion": <Code className="w-4 h-4" />,
+  "YouTube API": <Code className="w-4 h-4" />,
+  "Figma": <Palette className="w-4 h-4" />,
+  "Express": <Server className="w-4 h-4" />,
+  "Firebase": <Database className="w-4 h-4" />,
+};
 
 const projects = [
   {
@@ -482,6 +500,23 @@ export default function Projects() {
       ? projects
       : projects.filter((p) => p.category === selectedCategory);
 
+  // Get project index for counter and navigation
+  const projectIndex = selectedProject ? projects.findIndex(p => p.title === selectedProject.title) : -1;
+  
+  const handlePrevious = () => {
+    if (projectIndex > 0) {
+      setSelectedProject(projects[projectIndex - 1]);
+      setActiveTab("Project Details");
+    }
+  };
+
+  const handleNext = () => {
+    if (projectIndex < projects.length - 1) {
+      setSelectedProject(projects[projectIndex + 1]);
+      setActiveTab("Project Details");
+    }
+  };
+
   return (
     <section id="projects" className="py-16 flex flex-col items-center">
       <div className="max-w-screen-xl w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -716,7 +751,33 @@ export default function Projects() {
       >
         {/* Header */}
         <div className="flex justify-between items-center bg-gradient-to-r from-gray-800 to-gray-700 px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-700/40 ">
-          <div className="truncate">
+          {/* Left: Navigation */}
+          <div className="flex items-center gap-2">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handlePrevious}
+              disabled={projectIndex === 0}
+              className="p-2 rounded-lg bg-gray-700/50 hover:bg-[#F59E0B]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              <ChevronLeft className="w-5 h-5 text-gray-300 hover:text-[#F59E0B]" />
+            </motion.button>
+            <span className="text-xs sm:text-sm text-gray-400 bg-gray-900/40 px-2 py-1 rounded-lg font-medium">
+              {projectIndex + 1} / {projects.length}
+            </span>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={handleNext}
+              disabled={projectIndex === projects.length - 1}
+              className="p-2 rounded-lg bg-gray-700/50 hover:bg-[#F59E0B]/20 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            >
+              <ChevronRight className="w-5 h-5 text-gray-300 hover:text-[#F59E0B]" />
+            </motion.button>
+          </div>
+
+          {/* Center: Title */}
+          <div className="truncate flex-1 mx-4">
             <motion.h2
               initial={{ opacity: 0, x: -15 }}
               animate={{ opacity: 1, x: 0 }}
@@ -730,6 +791,7 @@ export default function Projects() {
             </p>
           </div>
 
+          {/* Right: Close Button */}
           <motion.button
             onClick={() => setSelectedProject(null)}
             className="p-2 rounded-full bg-gray-700/50 hover:bg-red-500/20 transition-all duration-300 group"
@@ -739,7 +801,7 @@ export default function Projects() {
         </div>
 
         {/* Body */}
-        <div className="p-3 sm:p-5 md:p-6 overflow-y-auto flex-1 will-change-scroll">
+        <div className="p-3 sm:p-5 md:p-6 flex-1 will-change-scroll">
           <div className="flex flex-col lg:flex-row gap-5 md:gap-6">
             {/* Left */}
             <div className="w-full lg:w-2/5 space-y-5 md:space-y-6">
@@ -776,6 +838,32 @@ export default function Projects() {
                   </p>
                 </div>
               </div>
+
+              {/* Buttons */}
+              <div className="flex flex-row gap-3">
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={selectedProject.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black font-semibold py-3 rounded-lg hover:shadow-lg hover:shadow-[#F59E0B]/40 transition-all"
+                >
+                  <ExternalLink className="w-5 h-5" />
+                  View Live Project
+                </motion.a>
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  href={selectedProject.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gray-700/80 backdrop-blur-sm text-white font-semibold py-3 rounded-lg hover:bg-gray-600 border border-gray-600/50 transition-all"
+                >
+                  <Github className="w-5 h-5" />
+                  View Source Code
+                </motion.a>
+              </div>
             </div>
 
             {/* Right */}
@@ -798,7 +886,7 @@ export default function Projects() {
               </div>
 
               {/* Tab Content */}
-              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-5 border border-gray-700/30 text-sm sm:text-base leading-relaxed text-gray-300">
+              <div className="bg-gray-800/30 rounded-xl p-4 sm:p-5 border border-gray-700/30 text-sm sm:text-base leading-relaxed text-gray-300 max-h-[calc(90vh-210px)] overflow-y-auto">
                 {activeTab === "Project Details" && (
                   <div className="space-y-6">
                     {/* Problem */}
@@ -822,14 +910,19 @@ export default function Projects() {
                     {/* Key Achievements */}
                     <div>
                       <h4 className="text-[#F59E0B] font-semibold text-lg mb-3">🏆 Key Achievements</h4>
-                      <ul className="space-y-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {selectedProject.achievements?.map((achievement, i) => (
-                          <li key={i} className="flex gap-2 text-gray-300">
-                            <span className="text-[#F59E0B] font-bold">•</span>
-                            <span>{achievement}</span>
-                          </li>
+                          <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: i * 0.1 }}
+                            className="bg-gradient-to-br from-[#F59E0B]/20 to-[#D97706]/10 p-3 rounded-lg border border-[#F59E0B]/30 hover:border-[#F59E0B]/60 transition-all duration-300"
+                          >
+                            <p className="text-gray-200 text-sm font-medium">{achievement}</p>
+                          </motion.div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -837,20 +930,37 @@ export default function Projects() {
                   <div className="space-y-4">
                     {selectedProject.techReasoning ? (
                       Object.entries(selectedProject.techReasoning).map(([tech, reason], i) => (
-                        <div key={i} className="bg-gray-900/40 p-3 rounded-lg border border-gray-700/30">
-                          <h5 className="text-[#F59E0B] font-semibold mb-1">{tech}</h5>
-                          <p className="text-gray-300 text-sm">{reason}</p>
-                        </div>
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: i * 0.1 }}
+                          className="bg-gradient-to-r from-gray-900/60 to-gray-800/40 p-3 rounded-lg border border-gray-700/30 hover:border-[#F59E0B]/40 transition-all duration-300"
+                        >
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="flex items-center justify-center w-6 h-6 rounded-lg bg-[#F59E0B]/20">
+                              {techIcons[tech] || <Code className="w-4 h-4 text-[#F59E0B]" />}
+                            </span>
+                            <h5 className="text-[#F59E0B] font-semibold">{tech}</h5>
+                          </div>
+                          <p className="text-gray-300 text-sm ml-8">{reason}</p>
+                        </motion.div>
                       ))
                     ) : (
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.techindetails.map((tech, i) => (
-                          <span
+                          <motion.div
                             key={i}
-                            className="bg-[#F59E0B] text-black px-3 py-1 rounded-full text-xs sm:text-sm font-semibold"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: i * 0.05 }}
+                            className="bg-gradient-to-br from-[#F59E0B] to-[#D97706] text-black px-3 py-2 rounded-lg text-xs sm:text-sm font-semibold flex items-center gap-2 hover:shadow-lg hover:shadow-[#F59E0B]/30 transition-all"
                           >
+                            <span className="flex items-center justify-center">
+                              {techIcons[tech] || <Code className="w-3 h-3" />}
+                            </span>
                             {tech}
-                          </span>
+                          </motion.div>
                         ))}
                       </div>
                     )}
@@ -876,28 +986,6 @@ export default function Projects() {
   </div>
 )}
 
-              </div>
-
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <a
-                  href={selectedProject.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#F59E0B] text-black font-semibold py-2 sm:py-3 rounded-lg hover:bg-amber-500 transition"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  View Project
-                </a>
-                <a
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-gray-700 text-white font-semibold py-2 sm:py-3 rounded-lg hover:bg-gray-600 transition"
-                >
-                  <Github className="w-4 h-4" />
-                  View Source
-                </a>
               </div>
             </div>
           </div>
