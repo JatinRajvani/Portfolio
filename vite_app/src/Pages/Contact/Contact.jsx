@@ -32,7 +32,7 @@ const sendEmail = (e) => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#FDC700]">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-[#F59E0B]">
             Get In Touch
           </h1>
           <p className="mt-4 text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -44,7 +44,7 @@ const sendEmail = (e) => {
 
         {/* Contact Info Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-[#FDC700] mb-6 text-center">
+          <h2 className="text-2xl font-bold text-[#F59E0B] mb-6 text-center">
             Contact Information
           </h2>
 
@@ -56,9 +56,9 @@ const sendEmail = (e) => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-6 bg-gray-900 border border-gray-700 rounded-xl text-center hover:border-[#FDC700] transition-all"
+                className="p-6 bg-gray-900 border border-gray-700 rounded-xl text-center sm:hover:border-[#F59E0B] transition-all"
               >
-                <h3 className="text-lg font-semibold text-[#FDC700] mb-2">
+                <h3 className="text-lg font-semibold text-[#F59E0B] mb-2">
                   {item.title}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
@@ -135,7 +135,7 @@ const sendEmail = (e) => {
                   type="text"
                   name="from_name"
                   placeholder="Your Name"
-                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-[#FDC700] outline-none text-sm sm:text-base"
+                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-[#F59E0B] outline-none text-sm sm:text-base"
                   required
                 />
 
@@ -143,7 +143,7 @@ const sendEmail = (e) => {
                   type="email"
                   name="from_email"
                   placeholder="Your Email"
-                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-[#FDC700] outline-none text-sm sm:text-base"
+                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-[#F59E0B] outline-none text-sm sm:text-base"
                   required
                 />
 
@@ -151,13 +151,13 @@ const sendEmail = (e) => {
                   name="message"
                   placeholder="Your Message"
                   rows="5"
-                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-[#FDC700] outline-none text-sm sm:text-base resize-none"
+                  className="w-full p-3 bg-gray-800 border border-gray-600 rounded-md text-gray-200 focus:ring-2 focus:ring-[#F59E0B] outline-none text-sm sm:text-base resize-none"
                   required
                 ></textarea>
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-[#FDC700] text-black font-semibold rounded-md hover:bg-yellow-400 transition text-sm sm:text-base"
+                  className="w-full py-3 bg-[#F59E0B] text-black font-semibold rounded-md sm:hover:bg-amber-500 transition text-sm sm:text-base"
                 >
                   Send Message
                 </button>
@@ -166,7 +166,7 @@ const sendEmail = (e) => {
 
             {/* Google Map */}
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-[#FDC700] mb-4 text-center">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#F59E0B] mb-4 text-center">
                 Location
               </h2>
               <div className="w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-xl overflow-hidden border border-gray-700 shadow-lg">

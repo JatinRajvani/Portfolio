@@ -233,12 +233,12 @@ export default function ResumePage() {
             {/* Preview Header */}
             <div className="flex items-center justify-between mb-4 w-full pt-2">
                   <h2 className="text-4xl lg:text-3xl font-bold mb-4 w-full text-center">
-                Resume <span className="text-[#FDC700]">Preview</span>
+                Resume <span className="text-[#F59E0B]">Preview</span>
               </h2>
               <div className="flex items-center gap-2 ">
                 <button
                   onClick={() => setIsPreviewOpen(!isPreviewOpen)}
-                  className="flex items-center gap-2 text-[#FDC700] hover:text-yellow-400 transition-colors text-sm"
+                  className="flex items-center gap-2 text-[#F59E0B] sm:hover:text-amber-500 transition-colors text-sm"
                 >
                   <Eye className="w-4 h-4" />
                   {isPreviewOpen ? 'Hide' : 'Show'}
@@ -269,12 +269,12 @@ export default function ResumePage() {
                 </div>
               ) : (
                 <div 
-                  className="h-full bg-gradient-to-br from-gray-700/30 to-gray-800/30 rounded-lg border-2 border-dashed border-gray-600 flex flex-col items-center justify-center cursor-pointer hover:border-[#FDC700]/50 transition-colors"
+                  className="h-full bg-gradient-to-br from-gray-700/30 to-gray-800/30 rounded-lg border-2 border-dashed border-gray-600 flex flex-col items-center justify-center cursor-pointer sm:hover:border-[#F59E0B]/50 transition-colors"
                   onClick={() => setIsPreviewOpen(true)}
                 >
                   <div className="text-center">
-                    <div className="inline-flex items-center justify-center w-20 h-20 bg-[#FDC700]/10 rounded-full mb-6">
-                      <FileText className="w-10 h-10 text-[#FDC700]" />
+                    <div className="inline-flex items-center justify-center w-20 h-20 bg-[#F59E0B]/10 rounded-full mb-6">
+                      <FileText className="w-10 h-10 text-[#F59E0B]" />
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-3">Click to Preview Resume</h3>
                     <p className="text-gray-400">View my resume directly here</p>
@@ -291,13 +291,13 @@ export default function ResumePage() {
             
             {/* Header Section */}
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 bg-[#FDC700]/10 border border-[#FDC700]/20 rounded-full px-4 py-2 mb-4">
-                <FileText className="w-4 h-4 text-[#FDC700]" />
-                <span className="text-[#FDC700] text-sm font-medium">Professional Resume</span>
+              <div className="inline-flex items-center gap-2 bg-[#F59E0B]/10 border border-[#F59E0B]/20 rounded-full px-4 py-2 mb-4">
+                <FileText className="w-4 h-4 text-[#F59E0B]" />
+                <span className="text-[#F59E0B] text-sm font-medium">Professional Resume</span>
               </div>
               
               <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-                My <span className="text-[#FDC700]">Resume</span>
+                My <span className="text-[#F59E0B]">Resume</span>
               </h1>
               
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
@@ -306,10 +306,10 @@ export default function ResumePage() {
             </div>
 
             {/* Download Actions */}
-            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 text-center hover:bg-gray-800/50 transition-all duration-300 mb-8 hover:border-[#FDC700] ">
+            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-xl p-4 text-center sm:hover:bg-gray-800/50 transition-all duration-300 mb-8 sm:hover:border-[#F59E0B] ">
               <div className="text-center mb-4">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#FDC700]/20 rounded-full mb-3">
-                  <Download className="w-6 h-6 text-[#FDC700]" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#F59E0B]/20 rounded-full mb-3">
+                  <Download className="w-6 h-6 text-[#F59E0B]" />
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Get My Resume</h3>
                 <p className="text-gray-300 text-sm">
@@ -320,7 +320,7 @@ export default function ResumePage() {
               <div className="space-y-3">
                 <button
                   onClick={handleDownload}
-                  className="w-full flex items-center justify-center gap-3 bg-[#FDC700] text-black font-bold px-6 py-3 rounded-xl hover:bg-yellow-400 transition-all duration-300 hover:scale-105"
+                  className="w-full flex items-center justify-center gap-3 bg-[#F59E0B] text-black font-bold px-6 py-3 rounded-xl sm:hover:bg-amber-500 transition-all duration-300 sm:hover:scale-105"
                 >
                   <Download className="w-5 h-5" />
                   Download Resume
