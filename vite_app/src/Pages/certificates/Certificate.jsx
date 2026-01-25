@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Award } from "lucide-react";
+import { motion } from "framer-motion";
+import { Award, Filter } from "lucide-react";
 
 export default function Certificates() {
   const certificates = [
@@ -114,61 +115,75 @@ export default function Certificates() {
 
   return (
     <section id="certificates" className="py-20 flex flex-col items-center px-4 sm:px-6 lg:px-10">
-      <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 text-center">
-        My <span className="text-[#FDC700]">Certificates</span>
-      </h2>
-      <p className="text-gray-400 text-center max-w-2xl mb-10 text-sm sm:text-base">
-        A showcase of my learning journey — skills gained through dedication and
-        hands-on projects.
-      </p>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center mb-12"
+      >
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white">
+          My{" "}
+          <span className="bg-gradient-to-r from-[#F59E0B] to-[#D97706] bg-clip-text text-transparent">
+            Certificates
+          </span>
+        </h2>
+        <p className="mt-3 text-gray-400 text-center max-w-2xl mx-auto text-sm sm:text-base">
+          A showcase of my learning journey — skills gained through dedication and
+          hands-on projects.
+        </p>
+      </motion.div>
 
       {/* 🔹 Filter Buttons */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12 w-full max-w-3xl">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 sm:px-5 py-2 rounded-full font-medium text-sm transition-all duration-300 
-              ${
+      <div className="flex items-center justify-center sm:justify-center bg-gradient-to-r from-gray-900/80 via-gray-800/80 to-gray-900/80 backdrop-blur-md border border-gray-700/50 rounded-xl px-4 sm:px-6 py-4 sm:py-3.5 shadow-lg sm:w-fit mx-auto mb-12 gap-4 sm:gap-3 flex-wrap">
+        <div className="flex items-center gap-2 flex-shrink-0">
+          <Filter className="text-[#F59E0B] w-4 h-4" />
+          <span className="text-gray-400 text-xs sm:text-sm font-semibold whitespace-nowrap">Filter By:</span>
+        </div>
+        <div className="flex gap-2 sm:gap-2.5 flex-wrap justify-center w-full sm:w-auto">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 sm:px-4 py-2 sm:py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                 selectedCategory === category
-                  ? "bg-[#FDC700] text-black"
-                  : "bg-[#1E293B] text-gray-300 hover:bg-[#FDC700]/20 hover:text-white"
+                  ? "bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black shadow-lg shadow-[#F59E0B]/50 font-bold"
+                  : "bg-gray-800/70 text-gray-300 hover:bg-gray-700/90 hover:text-[#F59E0B] border border-gray-700/60 hover:border-[#F59E0B]/60 hover:shadow-md hover:shadow-[#F59E0B]/20"
               }`}
-          >
-            {category}
-          </button>
-        ))}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* 🔹 Certificates Grid */}
       <div
-        className="grid gap-8 sm:gap-10 md:gap-12 
+        className="grid gap-12 sm:gap-8 lg:gap-12 
                    grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
-                   justify-items-center w-full"
+                   place-items-center w-full"
       >
         {filteredCertificates.map((cert, index) => (
           <div
             key={index}
-            className="relative group w-full max-w-[360px] sm:max-w-[340px] 
-                       rounded-2xl bg-gradient-to-br from-[#FDC700] to-transparent 
-                       hover:from-yellow-400 hover:to-transparent transition-all duration-300 p-[2px]"
+            className="w-full max-w-[360px] sm:max-w-[340px]"
           >
             <div
-              className="flex flex-col justify-between bg-[#101828]/90 backdrop-blur-lg rounded-2xl w-full 
-                         border border-[#1E293B]/30 hover:border-[#FDC700]/60 
-                         hover:shadow-[0_0_15px_rgba(253,199,0,0.3)]
+              className="flex flex-col justify-between bg-[#101828]/90 rounded-2xl w-full 
+                         border border-[#F59E0B]/40 hover:border-[#F59E0B]/80 
+                         shadow-lg hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]
                          transition-all duration-300 ease-out
-                         p-5 sm:p-6 min-h-[280px] sm:min-h-[300px] relative"
+                         p-5 sm:p-6 h-[320px] sm:h-[320px] relative"
+              style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }}
             >
               {/* Icon */}
-              <div className="absolute top-4 right-4 text-[#FDC700] opacity-70">
+              <div className="absolute top-4 right-4 text-[#F59E0B] opacity-70">
                 <Award size={24} className="sm:w-6 sm:h-6" />
               </div>
 
               {/* Content */}
               <div className="flex-grow pr-6 sm:pr-10">
                 <h2
-                  className="text-xl sm:text-2xl font-bold text-[#FDC700] mb-2 line-clamp-2 leading-tight"
+                  className="text-xl sm:text-2xl font-bold text-[#F59E0B] mb-2 line-clamp-2 leading-tight"
                   style={{ minHeight: "48px" }}
                 >
                   {cert.title}
@@ -191,8 +206,8 @@ export default function Certificates() {
                 href={cert.certificateLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 self-start bg-[#FDC700] text-black px-4 py-2 rounded-md font-semibold text-xs sm:text-sm
-                          hover:bg-yellow-400 transition duration-300"
+                className="mt-4 self-start bg-[#F59E0B] text-black px-4 py-2 rounded-md font-semibold text-xs sm:text-sm
+                          sm:hover:bg-amber-500 transition duration-300"
               >
                 View Certificate
               </a>

@@ -18,6 +18,13 @@ body {
   color: var(--color-text-pri);
   font-family: 'Inter', sans-serif;
   /* Adding Inter for cleaner look if available, standard fallbacks otherwise */
+  overflow-y: scroll;
+  /* Prevent scrollbar width changes */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

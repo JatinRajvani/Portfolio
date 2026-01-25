@@ -88,24 +88,24 @@ export default function CertificateTiltedCard({
               className="w-full h-[250px] object-cover rounded-lg"
             />
             <h2 className="text-xl font-bold text-white text-center">{title}</h2>
-            <h3 className="text-md font-medium text-[#FDC700] text-center">{by}</h3>
+            <h3 className="text-md font-medium text-[#F59E0B] text-center">{by}</h3>
           </div>
 
           {/* Back Side */}
           <div
-            className="absolute w-full h-full rounded-xl bg-[#101828]/90 border-2 border-[#FDC700] flex flex-col items-center justify-center p-5 space-y-4"
+            className="absolute w-full h-full rounded-xl bg-[#101828]/90 border-2 border-[#F59E0B] flex flex-col items-center justify-center p-5 space-y-4"
             style={{
               transform: "rotateY(180deg)",
               backfaceVisibility: "hidden",
             }}
           >
-            <h2 className="text-xl font-bold text-[#FDC700] text-center">{title}</h2>
+            <h2 className="text-xl font-bold text-[#F59E0B] text-center">{title}</h2>
             <p className="text-gray-300 text-sm text-center">{description}</p>
             <a
               href={certificateLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 bg-[#FDC700] text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-400 transition"
+              className="mt-2 bg-[#F59E0B] text-black px-4 py-2 rounded-lg font-semibold hover:bg-amber-500 transition"
             >
               View Certificate
             </a>
