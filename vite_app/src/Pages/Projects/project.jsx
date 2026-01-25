@@ -519,7 +519,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-16 flex flex-col items-center">
-      <div className="max-w-screen-xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-screen-xl w-full mx-auto px-4 sm:px-6 lg:px-2">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -562,12 +562,12 @@ export default function Projects() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3 place-items-center">
+        <div className="grid gap-6 sm:gap-6 lg:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center w-full">
           {filteredProjects.map((project, index) => (
             <div key={index} className="w-full flex justify-center">
               {/* Desktop View - Simple Card */}
-              <div className="hidden sm:block w-full max-w-sm h-[560px]">
-                <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 shadow-lg hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col gap-4">
+              <div className="hidden sm:block w-full max-w-sm h-[560px] group cursor-pointer">
+                <div className="bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-4 shadow-lg hover:shadow-2xl hover:shadow-[#F59E0B]/30 hover:border-[#F59E0B]/40 group-hover:scale-105 transition-all duration-300 h-full flex flex-col gap-4">
                   
                   {/* Inner Card - Image/Video */}
                   <div className="relative w-full h-60 group overflow-hidden bg-black rounded-xl border border-gray-700/30">
@@ -633,7 +633,7 @@ export default function Projects() {
                     <div className="flex gap-2 mt-auto">
                       <button
                         onClick={() => setSelectedProject(project)}
-                        className="flex-1 bg-[#F59E0B] text-black px-3 py-2 rounded-lg font-semibold hover:bg-amber-500 transition text-sm"
+                        className="flex-1 bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black px-3 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#F59E0B]/50 hover:scale-105 transition-all text-sm"
                       >
                         View Project
                       </button>
@@ -641,9 +641,9 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-gray-700/50 text-white px-3 py-2 rounded-lg font-semibold hover:bg-gray-600 transition flex items-center justify-center gap-1 text-sm border border-gray-600/50"
+                        className="flex-1 bg-gray-700/50 text-white px-3 py-2.5 rounded-lg font-semibold hover:bg-gray-600 hover:border-[#F59E0B]/40 hover:shadow-md transition-all flex items-center justify-center gap-1 text-sm border border-gray-600/50 group/btn"
                       >
-                        <Github className="w-4 h-4" />
+                        <Github className="w-4 h-4 group-hover/btn:text-[#F59E0B] transition-colors" />
                         Code
                       </a>
                     </div>
@@ -708,7 +708,7 @@ export default function Projects() {
                     <div className="flex gap-2 mt-auto">
                       <button
                         onClick={() => setSelectedProject(project)}
-                        className="flex-1 bg-[#F59E0B] text-black px-3 py-2 rounded-lg font-semibold hover:bg-amber-500 transition text-sm"
+                        className="flex-1 bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black px-3 py-2.5 rounded-lg font-semibold hover:shadow-lg hover:shadow-[#F59E0B]/50 hover:scale-105 transition-all text-sm"
                       >
                         View Project
                       </button>
@@ -716,9 +716,9 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 bg-gray-700/50 text-white px-3 py-2 rounded-lg font-semibold hover:bg-gray-600 transition flex items-center justify-center gap-1 text-sm border border-gray-600/50"
+                        className="flex-1 bg-gray-700/50 text-white px-3 py-2.5 rounded-lg font-semibold hover:bg-gray-600 hover:border-[#F59E0B]/40 hover:shadow-md transition-all flex items-center justify-center gap-1 text-sm border border-gray-600/50 group/btn"
                       >
-                        <Github className="w-4 h-4" />
+                        <Github className="w-4 h-4 group-hover/btn:text-[#F59E0B] transition-colors" />
                         Code
                       </a>
                     </div>
