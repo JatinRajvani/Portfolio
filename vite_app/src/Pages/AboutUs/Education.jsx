@@ -127,7 +127,7 @@ const educationData = [
     duration: "Aug 2024 – May 2028",
     highlights: [
       "Relevant Courses: DSA, Web Development, DBMS",
-      "Built 'Homy' – Hostel Booking MERN App, Attendance and Payroll Management App",
+      "Built 'Vedant Attendance , SEBN (Smart Emergency Blood Network) , Mutual Funds , Homy projects",
     ],
   },
   {

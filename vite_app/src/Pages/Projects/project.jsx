@@ -22,7 +22,274 @@ const techIcons = {
   "Firebase": <Database className="w-4 h-4" />,
 };
 
-const projects = [
+const projects = [ 
+{
+  title: "VedantAttendance – Attendance Management System",
+  role: "Full-Stack Developer",
+  contributor: "Solo Project",
+  description:
+    "Built an attendance management system with face recognition and location-based tracking, ensuring secure authentication and consistent data across the full stack.",
+  
+  problem:
+    "In traditional manual attendance systems, students were required to physically mark their attendance, including manually recording in-time and out-time. This process often resulted in long queues, crowding during peak hours, and significant time consumption. The manual nature of attendance marking made the process inconvenient for students and inefficient for administrators, especially when managing large groups.",
+
+  yourContribution:
+    "I worked on the project end to end, starting with designing and building the backend using Node.js and Express, along with JWT-based authentication for secure and role-based access. I developed the frontend in React, focusing on a responsive and easy-to-use interface, and used MongoDB to store and manage application data efficiently. In addition to this, I built a face recognition service using Python and deployed it on AWS to handle identity verification during attendance marking. Finally, I connected all parts of the system to make sure everything works smoothly together as a complete solution.",
+
+  solution:
+    "VedantAttendance automates attendance using face recognition and location-based validation, allowing students to mark attendance only within the classroom area. Face verification ensures the correct student marks attendance, preventing misuse. Students can view attendance history and statistics, while administrators manage students, branches, attendance, and approvals through a role-based system. The student interface is fully responsive for seamless mobile usage.",
+
+  achievements: [
+  "Significantly reduced time spent on attendance by eliminating physical queues through mobile-based face recognition.",
+  "Enabled daily attendance marking for 200+ users using a secure and scalable system.",
+  "Successfully implemented face recognition and location-based validation to prevent proxy attendance.",
+  "Delivered a fully functional, role-based attendance platform deployed and tested across real-world environments."
+]
+,
+
+techReasoning: {
+  "React": "Used to build a responsive and intuitive user interface, optimized for mobile devices as most students mark attendance from their phones",
+  "Redux Toolkit": "Managed global state for authentication, user roles, and attendance data across the application",
+  "Node.js + Express": "Implemented REST APIs and business logic for attendance, user management, and role-based access",
+  "MongoDB": "Stored student, attendance, branch, and batch data with a flexible schema for scalability",
+  "JWT Authentication": "Provided secure and role-based access control for students and administrators",
+  "Date-Time Normalization": "Ensured consistent attendance timestamps across frontend, backend, and database environments",
+  "Python (Face Recognition Service)": "Handled face detection and verification for secure attendance marking",
+  "Postman": "Used for testing and validating APIs during development",
+  "AWS": "Deployed the face recognition service to ensure reliable and scalable identity verification",
+  "Vercel": "Deployed the frontend for fast delivery and seamless user access",
+  "Render": "Deployed backend services and APIs for stable production usage"
+}
+,
+
+  briefdescription:
+    "VedantAttendance is a full-stack web application designed to manage and track attendance efficiently. It provides separate dashboards for administrators and users, ensures accurate time handling across systems, and offers a reliable foundation for real-world attendance workflows.",
+
+  techindetails: [
+    "React",
+    "CSS",
+    "Redux Toolkit",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT Authentication"
+  ],
+
+  tech: ["MERN Stack", "Python", "AWS"],
+
+  video: "",
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/c_crop,w_1200,h_675/v1769357403/clipboard-image-1769357253_ixhadt.png",
+  github: "",
+  live: "",
+
+  category: "Fullstack",
+
+features: [
+  {
+    role: "👨‍💼 Admin",
+    items: [
+      "Manage students, batches, and branches from a centralized dashboard",
+      "View and manage daily and monthly attendance records",
+      "Review and handle pending attendance approvals",
+      "Monitor attendance activity across branches and batches",
+      "Ensure secure and role-based access to system features"
+    ]
+  },
+  {
+    role: "👩‍💻 Student",
+    items: [
+      "Mark attendance using face recognition and location-based validation",
+      "Mark attendance only within the classroom or authorized location",
+      "View personal attendance history with statistics",
+      "Access the system through a fully responsive mobile-friendly interface",
+      "Securely log in and access attendance records"
+    ]
+  }
+]
+,
+
+  startDate: "December 2025",
+  endDate: "January 2026",
+  duration: "1 Month",
+  teamSize: "1",
+  status: "Completed"
+}
+,
+{
+  title: "SEBN – Smart Emergency Blood Network",
+  role: "Admin Module Developer",
+  contributor: "Group Project",
+  description:
+    "Developed the admin governance module for a smart emergency blood network that streamlines blood request handling, donor coordination, and system oversight during critical situations.",
+
+  problem:
+    "In emergency medical situations, hospitals and patients often face delays in arranging blood due to the lack of real-time donor availability, fragmented communication between stakeholders, and manual coordination processes. Existing systems struggle with verification, monitoring, and centralized control, leading to inefficiencies when time is critical.",
+
+  yourContribution:
+    "I was responsible for designing and implementing the Admin role within SEBN. This included developing secure admin APIs using Node.js and Express, implementing role-based authentication with JWT, and designing MongoDB schemas for system governance. I built admin functionalities to monitor blood requests, manage users and hospitals, review system activity, and ensure data consistency across the platform. My work focused on system control, reliability, and operational clarity rather than end-user interactions.",
+
+  solution:
+    "SEBN is a centralized emergency blood coordination platform designed as a governance network connecting hospitals, blood banks, NGOs, and blood donors. When a hospital raises a blood request, the system checks live blood stock availability across nearby hospitals and blood banks. If the required blood is not available locally, the search area is gradually expanded to nearby regions to improve the chances of finding it quickly.If blood stock remains unavailable beyond a defined range, SEBN activates a fallback mechanism by identifying eligible nearby donors who can support emergency needs. The platform also maintains updated blood stock visibility and enables NGOs to organize blood donation camps, helping strengthen donor participation and ensure long-term reliability of the blood network.",
+
+  achievements: [
+    "Designed and implemented a centralized Admin governance module for emergency blood coordination.",
+    "Enabled real-time monitoring of blood requests, donor responses, and hospital activity.",
+    "Implemented secure, role-based access control using JWT for system administrators.",
+    "Ensured data integrity and operational oversight through structured admin workflows."
+  ],
+
+  techReasoning: {
+    "Node.js + Express": "Used to build scalable and secure REST APIs for admin operations and system governance",
+    "MongoDB": "Stored users, hospitals, blood requests, and system activity with a flexible and extensible schema",
+    "JWT Authentication": "Implemented secure role-based access for Admin, ensuring controlled system operations",
+    "React": "Used for building admin dashboards to visualize and manage system data",
+    "Redux Toolkit": "Managed global state for admin authentication and system data",
+    "Role-Based Access Control (RBAC)": "Ensured clear separation of privileges between admin and other roles",
+    "API Validation & Error Handling": "Improved system reliability during emergency workflows",
+    "Postman": "Used to test and validate admin and system APIs during development"
+  },
+
+  briefdescription:
+    "SEBN is a full-stack emergency response platform designed to improve blood availability coordination. The Admin module plays a critical role in ensuring governance, security, and operational visibility across the system.",
+
+  techindetails: [
+    "React",
+    "CSS",
+    "Redux Toolkit",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT Authentication"
+  ],
+
+  tech: ["MERN Stack"],
+
+  video: "https://drive.google.com/file/d/11B8QSl-I51-MEBtz-P5Ga7FNi8T8gLhR/preview",
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/c_crop,w_1200,h_900,ar_4:3/v1769367456/sebnscreenshort_ugwlsu.png",
+  github: "https://github.com/VasaraSujal/Hack_The_Winter?tab=readme-ov-file",
+  live: "https://hackthewinter.netlify.app/",
+
+  category: "Fullstack",
+
+features: [
+  {
+    role: "🛡️ Super Admin",
+    items: [
+      "Oversee the entire SEBN network across hospitals, blood banks, and NGOs",
+      "Manage platform-level configurations, permissions, and governance rules",
+      "Monitor system-wide activity, emergency request flow, and data integrity",
+      "Handle escalations and ensure reliable platform operations during emergencies"
+    ]
+  },
+  {
+    role: "🏥 Hospital",
+    items: [
+      "Raise emergency blood requests with required blood type and quantity",
+      "View live blood stock availability across nearby blood banks and hospitals",
+      "Track request status in real time as the search radius expands",
+      "Coordinate with blood banks or donors through the platform"
+    ]
+  },
+  {
+    role: "🩸 Blood Bank",
+    items: [
+      "Manage and update available blood stock in real time",
+      "Respond to emergency blood requests from hospitals",
+      "Maintain accurate blood inventory records within the system",
+      "Support emergency fulfillment through verified blood supply"
+    ]
+  },
+  {
+    role: "🤝 NGO",
+    items: [
+      "Create and manage blood donation camps",
+      "Register and onboard new blood donors",
+      "Share donation camp information within the network",
+      "Strengthen donor availability and community participation"
+    ]
+  },
+]
+,
+
+  startDate: "January 2026",
+  endDate: "February 2026",
+  duration: "1 Month",
+  teamSize: "Group Project",
+  status: "Completed"
+}
+,
+{
+  title: "MF Insights – Mutual Fund Data Exploration & Investment Calculators",
+  role: "Full-Stack Developer",
+  contributor: "Solo Project",
+  description:
+    "Developed a Next.js-based mutual fund exploration platform that consumes real mutual fund market data APIs and allows users to analyze individual funds using multiple investment calculators as part of a practical learning project.",
+
+  problem:
+    "Understanding how real-world financial platforms handle large, dynamic datasets and investment calculations requires more than theoretical knowledge. Many beginner projects rely on static or mock data and generic calculators, which do not reflect real production challenges such as API-driven data flow, fund-specific calculations, performance considerations, and structured presentation of financial information.",
+
+  yourContribution:
+    "I independently designed and developed the entire application. My work included integrating a real mutual fund data API, structuring and rendering large fund datasets, building dynamic routes for individual fund pages using Next.js, and implementing accurate financial calculation logic for SIP, Step-Up SIP, Lump Sum, and SWP calculators. The project was focused on strengthening my understanding of data-driven architecture, calculation workflows, and modern frontend patterns.",
+
+  solution:
+    "MF Insights was created as a hands-on learning project to simulate how modern finance applications consume and present real market data. The platform fetches live mutual fund information through an external API and displays it using a structured, performant Next.js architecture. For each mutual fund, users can apply different investment strategies using built-in calculators to observe potential outcomes. The goal was not to replace existing financial platforms, but to gain practical experience with Next.js, API integration, and reliable financial computation in a realistic application setup.",
+
+  achievements: [
+    "Integrated real-time mutual fund data using an external API",
+    "Implemented fund-specific investment calculators including SIP, Step-Up SIP, Lump Sum, and SWP",
+    "Built dynamic fund detail pages using Next.js routing",
+    "Designed and completed a full-stack learning project independently"
+  ],
+
+  techReasoning: {
+    "Next.js": "Used for building a performant, SEO-friendly, and API-driven application with dynamic routing",
+    "Redux Toolkit": "Managed global state for mutual fund data and calculator inputs",
+    "External Mutual Fund API": "Provided live and structured mutual fund market data",
+    "Financial Calculation Logic": "Implemented accurate formulas for SIP, Step-Up SIP, Lump Sum, and SWP scenarios",
+    "Error Handling & Data Validation": "Ensured application stability when dealing with inconsistent or unavailable API data"
+  },
+
+  briefdescription:
+    "MF Insights is a learning-focused mutual fund analysis platform that combines real market data with investment calculators to practice real-world finance application development.",
+
+  techindetails: [
+    "Next.js",
+    "CSS",
+    "Redux Toolkit",
+    "Node.js",
+    "External Mutual Fund API"
+  ],
+
+  tech: ["Next.js", "Fintech"],
+
+  video: "",
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1769416153/ChatGPT_Image_Jan_26_2026_01_57_12_PM_ynhinw.png",
+  github: "",
+  live: "",
+
+  category: "Fullstack",
+
+  features: [
+    {
+      role: "📊 User",
+      items: [
+        "Browse and search mutual funds using real market data",
+        "View detailed information for individual mutual funds",
+        "Calculate SIP investments for selected funds",
+        "Use Step-Up SIP calculators for progressive investment planning",
+        "Evaluate Lump Sum investment scenarios",
+        "Analyze SWP and Step-Up withdrawal strategies"
+      ]
+    }
+  ],
+
+  startDate: "—",
+  endDate: "—",
+  duration: "Solo Development",
+  teamSize: "Solo Project",
+  status: "Completed"
+}
+,
   {
     title: "Attendance and Payroll Management App",
     role: "Full-Stack Developer",
@@ -619,7 +886,7 @@ export default function Projects() {
 
                     {/* Tech Stack */}
                     <div className="flex flex-wrap gap-2">
-                      {project.tech.slice(0, 3).map((tech, i) => (
+                      {project.tech.slice(0, 4).map((tech, i) => (
                         <span
                           key={i}
                           className="bg-[#F59E0B]/20 text-[#F59E0B] text-xs px-2 py-1 rounded-lg border border-[#F59E0B]/30"
@@ -800,7 +1067,7 @@ export default function Projects() {
         </div>
 
         {/* Body */}
-        <div className="p-3 sm:p-5 md:p-6 flex-1 will-change-scroll overflow-y-auto sm:overflow-y-hidden">
+        <div className="p-3 sm:p-5 md:p-6 flex-1 will-change-scroll overflow-y-auto">
           <div className="flex flex-col lg:flex-row gap-5 md:gap-6">
             {/* Left */}
             <div className="w-full lg:w-2/5 space-y-5 md:space-y-6">
@@ -894,17 +1161,18 @@ export default function Projects() {
                       <p className="text-gray-300 leading-relaxed">{selectedProject.problem}</p>
                     </div>
 
+                    {/* Solution */}
+                    <div>
+                      <h4 className="text-[#F59E0B] font-semibold text-lg mb-2">✨ Solution</h4>
+                      <p className="text-gray-300 leading-relaxed">{selectedProject.solution}</p>
+                    </div>
+
                     {/* Your Contribution */}
                     <div>
                       <h4 className="text-[#F59E0B] font-semibold text-lg mb-2">💻 My Contribution</h4>
                       <p className="text-gray-300 leading-relaxed">{selectedProject.yourContribution}</p>
                     </div>
 
-                    {/* Solution */}
-                    <div>
-                      <h4 className="text-[#F59E0B] font-semibold text-lg mb-2">✨ Solution</h4>
-                      <p className="text-gray-300 leading-relaxed">{selectedProject.solution}</p>
-                    </div>
 
                     {/* Key Achievements */}
                     <div>

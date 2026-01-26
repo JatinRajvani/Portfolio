@@ -1,9 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code } from "lucide-react";
+import { Cloud, Code } from "lucide-react";
 import AnimatedSection from "../../Components/Animated";
 import { SiHtml5, SiFigma, SiJavascript } from "react-icons/si";
 import { LuMonitor } from "react-icons/lu";
+import { FaAws } from "react-icons/fa6";
 
 const TimelineItem = ({ icon, title, description, isLast = false }) => {
   return (
@@ -97,8 +98,14 @@ const CurrentStatusSection = ({ id }) => {
       icon: <LuMonitor size={22} className="sm:w-7 sm:h-7" />,
       title: "Building Real-World Websites",
       description:
-        "With full-stack knowledge, I built **Homy**, applying my skills in **frontend, backend, and database integration** to create real-world projects.",
+        "With full-stack knowledge, I built **Vedant Attendance** , **SEBN (Smart Emergency Blood Network)** , **Mutual Funds**, **Homy**, applying my skills in **Frontend, Backend, and database integration** to create real-world projects.",
     },
+      {
+      icon: <FaAws size={22} className="sm:w-7 sm:h-7" />,
+      title: "Scaling Backend & Exploring Cloud",
+      description:
+        "Currently diving into **AWS cloud services** and **backend scalability** to design robust, production-ready systems. Learning **Python** for backend development, exploring **DevOps practices**, **microservices architecture**, and **system design** to build efficient, scalable applications.",
+    }
   ];
 
   return (
