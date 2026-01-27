@@ -1,10 +1,18 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
+import SEO from '../../Components/SEO';
 
 const Home = () => {
   return (
     <div className="relative w-full min-h-screen bg-[var(--color-bg)] overflow-hidden flex items-center justify-center">
+      {/* SEO Meta Tags */}
+      <SEO
+        title="Jatin Rajvani - Full Stack Developer | Home"
+        description="Welcome to Jatin Rajvani's portfolio. Full Stack Developer specializing in React, Node.js, and modern web technologies. Building innovative digital experiences."
+        keywords="Jatin Rajvani, Full Stack Developer, React Developer, Web Developer, Portfolio, JavaScript, Node.js, UI/UX, Front-end Developer"
+        canonicalUrl="https://jatinrajvani.me/"
+      />
 
       {/* 1. Base Gradient - Obsidian Foundation */}
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-[#0a0a0b] to-black" />

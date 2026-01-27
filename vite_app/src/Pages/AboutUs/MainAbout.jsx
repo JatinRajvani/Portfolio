@@ -1,12 +1,24 @@
 import React from 'react';
 import StarField from '../../Components/StarsFile';
 import About from './About';
+import SEO from '../../Components/SEO';
+import { seoConfig } from '../../config/seoConfig';
 
 const MainAbout = () => {
+  const { title, description, keywords, canonicalUrl } = seoConfig.pages.about;
+
   return (
-    <StarField>
-      <About />
-    </StarField>
+    <>
+      <SEO
+        title={title}
+        description={description}
+        keywords={keywords}
+        canonicalUrl={`${seoConfig.default.siteUrl}${canonicalUrl}`}
+      />
+      <StarField>
+        <About />
+      </StarField>
+    </>
   );
 };
 
