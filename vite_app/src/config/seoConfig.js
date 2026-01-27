@@ -5,7 +5,7 @@ export const seoConfig = {
         title: 'Jatin Rajvani - Full Stack Developer | Portfolio',
         description: 'Full Stack Developer specializing in React, Node.js, and modern web technologies. Explore my projects, skills, and experience in building innovative digital solutions.',
         keywords: 'Jatin Rajvani, Full Stack Developer, React Developer, Web Developer, Portfolio, JavaScript, Node.js, UI/UX',
-        ogImage: '/personalphoto copy.png',
+        ogImage: '/og-image.png',
         siteUrl: 'https://jatinrajvani.me',
     },
 

@@ -12,6 +12,8 @@ lerna-debug.log*
 .env.local
 .env.*.local
 
+readme_files
+
 # Dependencies
 node_modules
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
 import SEO from '../../Components/SEO';
+import StructuredData from '../../Components/StructuredData';
+import { seoConfig } from '../../config/seoConfig';
 
 const Home = () => {
   return (
@@ -13,6 +15,9 @@ const Home = () => {
         keywords="Jatin Rajvani, Full Stack Developer, React Developer, Web Developer, Portfolio, JavaScript, Node.js, UI/UX, Front-end Developer"
         canonicalUrl="https://jatinrajvani.me/"
       />
+
+      {/* Structured Data */}
+      <StructuredData data={seoConfig.structuredData} />
 
       {/* 1. Base Gradient - Obsidian Foundation */}
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-[#0a0a0b] to-black" />
@@ -137,7 +142,7 @@ const Home = () => {
               {/* Photo Container */}
               <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[440px] lg:h-[440px] rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:border-[var(--color-accent)]/50">
                 <img
-                  src="/personalphoto.png"
+                  src="/og-image.png"
                   alt="Jatin Rajvani - Full Stack Developer"
                   className="w-full h-full object-cover"
                 />
