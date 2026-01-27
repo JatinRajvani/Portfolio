@@ -6,6 +6,8 @@ const SEO = ({
     description = 'Full Stack Developer specializing in React, Node.js, and modern web technologies. Explore my projects, skills, and experience in building innovative digital solutions.',
     keywords = 'Jatin Rajvani, Full Stack Developer, React Developer, Web Developer, Portfolio, JavaScript, Node.js, UI/UX',
     ogImage = '/og-image.jpg',
+    ogImageWidth = '1200',
+    ogImageHeight = '630',
     ogType = 'website',
     twitterCard = 'summary_large_image',
     canonicalUrl,
@@ -38,6 +40,8 @@ const SEO = ({
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             <meta property="og:image" content={ogImage} />
+            <meta property="og:image:width" content={ogImageWidth} />
+            <meta property="og:image:height" content={ogImageHeight} />
 
             {/* Twitter */}
             <meta property="twitter:card" content={twitterCard} />
@@ -54,6 +58,8 @@ SEO.propTypes = {
     description: PropTypes.string,
     keywords: PropTypes.string,
     ogImage: PropTypes.string,
+    ogImageWidth: PropTypes.string,
+    ogImageHeight: PropTypes.string,
     ogType: PropTypes.string,
     twitterCard: PropTypes.string,
     canonicalUrl: PropTypes.string,
