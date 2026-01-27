@@ -1,9 +1,10 @@
-# Allow all search engines to crawl the site
+# Allow all crawlers
 User-agent: *
 Allow: /
 
 # Sitemap location
 Sitemap: https://jatinrajvani.me/sitemap.xml
 
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 1
+# Disallow demo/test pages if any
+User-agent: *
+Disallow: /demo
