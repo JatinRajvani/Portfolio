@@ -2,7 +2,6 @@ import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
 import SEO from '../../Components/SEO';
-import StructuredData from '../../Components/StructuredData';
 import { seoConfig } from '../../config/seoConfig';
 
 const Home = () => {
@@ -18,9 +17,6 @@ const Home = () => {
         ogImageWidth={seoConfig.default.ogImageWidth}
         ogImageHeight={seoConfig.default.ogImageHeight}
       />
-
-      {/* Structured Data */}
-      <StructuredData data={seoConfig.structuredData} />
 
       {/* 1. Base Gradient - Obsidian Foundation */}
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-950 via-[#0a0a0b] to-black" />

@@ -71,6 +71,7 @@ export const seoConfig = {
         name: 'Jatin Rajvani',
         jobTitle: 'Full Stack Developer',
         url: 'https://jatinrajvani.me',
+        image: 'https://res.cloudinary.com/doqzxuxb1/image/upload/v1769495165/jatinrajvani-portfolio-image_dyrnnc.png',
         sameAs: [
             'https://www.linkedin.com/in/jatin-rajvani/',
             'https://github.com/JatinRajvani',

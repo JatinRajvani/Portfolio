@@ -2,7 +2,6 @@ import React from 'react';
 import StarField from '../../Components/StarsFile';
 import About from './About';
 import SEO from '../../Components/SEO';
-import StructuredData from '../../Components/StructuredData';
 import { seoConfig } from '../../config/seoConfig';
 
 const MainAbout = () => {
@@ -19,7 +18,6 @@ const MainAbout = () => {
         ogImageWidth={seoConfig.default.ogImageWidth}
         ogImageHeight={seoConfig.default.ogImageHeight}
       />
-      <StructuredData data={seoConfig.structuredData} />
       <StarField>
         <About />
       </StarField>

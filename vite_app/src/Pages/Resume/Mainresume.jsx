@@ -2,7 +2,6 @@ import React from 'react';
 import StarField from '../../Components/StarsFile';
 import ResumePage from './resume';
 import SEO from '../../Components/SEO';
-import StructuredData from '../../Components/StructuredData';
 import { seoConfig } from '../../config/seoConfig';
 const MainResumePage = () => {
   const { title, description, keywords, canonicalUrl } = seoConfig.pages.resume;
@@ -17,7 +16,6 @@ const MainResumePage = () => {
         ogImageWidth={seoConfig.default.ogImageWidth}
         ogImageHeight={seoConfig.default.ogImageHeight}
       />
-      <StructuredData data={seoConfig.structuredData} />
       <StarField>
         <ResumePage />
       </StarField>
