@@ -15,6 +15,9 @@ const MainContact = () => {
         description={description}
         keywords={keywords}
         canonicalUrl={`${seoConfig.default.siteUrl}${canonicalUrl}`}
+        ogImage={seoConfig.default.ogImage}
+        ogImageWidth={seoConfig.default.ogImageWidth}
+        ogImageHeight={seoConfig.default.ogImageHeight}
       />
       <StructuredData data={seoConfig.structuredData} />
       <StarField>

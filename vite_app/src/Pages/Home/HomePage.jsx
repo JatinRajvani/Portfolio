@@ -14,6 +14,9 @@ const Home = () => {
         description="Welcome to Jatin Rajvani's portfolio. Full Stack Developer specializing in React, Node.js, and modern web technologies. Building innovative digital experiences."
         keywords="Jatin Rajvani, Full Stack Developer, React Developer, Web Developer, Portfolio, JavaScript, Node.js, UI/UX, Front-end Developer"
         canonicalUrl="https://jatinrajvani.me/"
+        ogImage={seoConfig.default.ogImage}
+        ogImageWidth={seoConfig.default.ogImageWidth}
+        ogImageHeight={seoConfig.default.ogImageHeight}
       />
 
       {/* Structured Data */}
@@ -142,7 +145,7 @@ const Home = () => {
               {/* Photo Container */}
               <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[440px] lg:h-[440px] rounded-3xl overflow-hidden border-2 border-white/10 shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02] group-hover:border-[var(--color-accent)]/50">
                 <img
-                  src="/og-image.png"
+                  src="https://res.cloudinary.com/doqzxuxb1/image/upload/v1769495165/jatinrajvani-portfolio-image_dyrnnc.png"
                   alt="Jatin Rajvani - Full Stack Developer"
                   className="w-full h-full object-cover"
                 />
