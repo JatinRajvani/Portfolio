@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Typewriter } from 'react-simple-typewriter';
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from 'react-icons/fa6';
 import SEO from '../../Components/SEO';
 import { seoConfig } from '../../config/seoConfig';
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative w-full min-h-screen bg-[var(--color-bg)] overflow-hidden flex items-center justify-center">
       {/* SEO Meta Tags */}
@@ -99,12 +101,18 @@ const Home = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
-              <button className="group relative px-8 py-3 bg-[var(--color-accent)] text-white font-medium rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-accent)]/30 hover:-translate-y-0.5">
+              <button 
+                onClick={() => navigate('/projects')}
+                className="group relative cursor-pointer px-8 py-3 bg-[var(--color-accent)] text-white font-medium rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[var(--color-accent)]/30 hover:-translate-y-0.5"
+              >
                 <span className="relative z-10">View Projects</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-600 to-yellow-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </button>
 
-              <button className="px-8 py-3 border-2 border-white/20 text-white font-medium rounded-lg backdrop-blur-sm hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-all duration-300 hover:-translate-y-0.5">
+              <button 
+                onClick={() => navigate('/contact')}
+                className="cursor-pointer px-8 py-3 border-2 border-white/20 text-white font-medium rounded-lg backdrop-blur-sm hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 transition-all duration-300 hover:-translate-y-0.5"
+              >
                 Get in Touch
               </button>
             </div>
@@ -112,10 +120,10 @@ const Home = () => {
             {/* Social Links */}
             <div className="flex gap-5 justify-center lg:justify-start pt-6">
               {[
-                { icon: <FaLinkedin />, href: 'https://linkedin.com', label: 'LinkedIn' },
-                { icon: <FaGithub />, href: 'https://github.com', label: 'GitHub' },
-                { icon: <FaXTwitter />, href: 'https://x.com', label: 'Twitter' },
-                { icon: <FaEnvelope />, href: 'mailto:your@email.com', label: 'Email' },
+                { icon: <FaLinkedin />, href: 'https://www.linkedin.com/in/jatin-rajvani/', label: 'LinkedIn' },
+                { icon: <FaGithub />, href: 'https://github.com/JatinRajvani', label: 'GitHub' },
+                { icon: <FaXTwitter />, href: 'https://x.com/JatinRajvani', label: 'Twitter' },
+                { icon: <FaEnvelope />, href: 'mailto:jatinrajvani.cg@gmail.com', label: 'Email' },
               ].map((social, idx) => (
                 <a
                   key={idx}

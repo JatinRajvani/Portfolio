@@ -199,7 +199,7 @@ export default function ResumePage() {
   const [isPreviewOpen, setIsPreviewOpen] = useState(true);
   
   // Convert Google Drive sharing link to embeddable format
-  const driveFileId = "1xTHzLXdn2lThZ21lZO_qKs3AKXtpCKlx";
+  const driveFileId = "1TJGgdFbvYbS8n14eypVmY5thbTzoYbXm";
   const embedUrl = `https://drive.google.com/file/d/${driveFileId}/preview`;
   const downloadUrl = `https://drive.google.com/uc?export=download&id=${driveFileId}`;
   const viewUrl = `https://drive.google.com/file/d/${driveFileId}/view`;
