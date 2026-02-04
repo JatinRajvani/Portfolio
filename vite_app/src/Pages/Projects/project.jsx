@@ -329,7 +329,7 @@ features: [
       "PDFKit / ReportLab"
     ],
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
-    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
+    video: "",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757874895/AP2_rkekgb.png",
     github: "https://github.com/aryapatel23/Attendance-and-Payroll-Management",
     live: "https://attendance-and-payroll-management.vercel.app/",
@@ -401,7 +401,7 @@ features: [
       "RESTful API"
     ],
     tech: ["React", "Tailwind", "Node.js", "MongoDB"],
-    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
+    video: "",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1757956095/20250915_2230_Homy_App_Features_remix_01k5751pnwe3293hvc24xw7w2x_3_y2tkj4.png",
     github: "https://github.com/JatinRajvani/homy",
     live: "https://homy-phev.vercel.app/",
@@ -484,7 +484,7 @@ features: [
       "RESTful API"
     ],
     tech: ["React", "Vite", "Node.js", "MongoDB"],
-    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
+    video: "",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758051396/ecohubsimg_zzaglv.png",
     github: "https://github.com/JatinRajvani/odooxnmit",
     live: "https://ecofinds-second-hand.netlify.app/",
@@ -552,7 +552,7 @@ features: [
       "Rental Management UI kit designed for landlords and tenants to manage properties, rent details, and communication efficiently.",
     techindetails: ["Figma", "React", "Tailwind CSS"],
     tech: ["Figma", "React", "Tailwind"],
-    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
+    video: "",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
     github: "https://github.com/yourusername/ui-kit",
     live: "https://your-live-demo-link.com",
@@ -603,7 +603,7 @@ features: [
       "REST API integration"
     ],
     tech: ["React", "Vite", "CSS", "YouTube API"],
-    video: "https://www.youtube.com/embed/JBY8KdyZx3U",
+    video: "",
     img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1758200202/yt-colne_image_iiybpo.png",
     github: "https://github.com/JatinRajvani/Clone-using-React",
     live: "https://thriving-phoenix-8688f2.netlify.app/",
@@ -843,7 +843,7 @@ export default function Projects() {
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:opacity-0 transition-opacity duration-300"
                     />
-                    {project.video && (
+                    {project.video ? (
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <iframe
                           src={project.video}
@@ -852,6 +852,16 @@ export default function Projects() {
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
                         ></iframe>
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-gray-800 to-gray-900 flex flex-col items-center justify-center gap-3">
+                        <div className="text-4xl">🎬</div>
+                        <p className="text-gray-300 text-sm font-semibold text-center px-4">
+                          Video not available yet
+                        </p>
+                        <p className="text-gray-500 text-xs text-center px-4">
+                          Check back soon or visit the live demo
+                        </p>
                       </div>
                     )}
                   </div>
