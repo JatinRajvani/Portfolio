@@ -77,7 +77,7 @@ techReasoning: {
 
   tech: ["MERN Stack", "Python", "AWS"],
 
-  video: "",
+  video: "https://drive.google.com/file/d/1aMLEev9G6izH5rhYt2PdYTDhiZaz9wR6/preview" ,
   img: "https://res.cloudinary.com/doqzxuxb1/image/upload/c_crop,w_1200,h_675/v1769357403/clipboard-image-1769357253_ixhadt.png",
   github: "",
   live: "",
