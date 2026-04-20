@@ -160,19 +160,19 @@ export default function Certificates() {
       <div
         className="grid gap-12 sm:gap-8 lg:gap-12 
                    grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 
-                   place-items-center w-full"
+                   justify-items-center items-stretch w-full"
       >
         {filteredCertificates.map((cert, index) => (
           <div
             key={index}
-            className="w-full max-w-[360px] sm:max-w-[340px]"
+            className="w-full max-w-[360px] sm:max-w-[340px] h-full"
           >
             <div
               className="flex flex-col justify-between bg-[#101828]/90 rounded-2xl w-full 
                          border border-[#F59E0B]/40 hover:border-[#F59E0B]/80 
                          shadow-lg hover:shadow-[0_0_20px_rgba(245,158,11,0.4)]
                          transition-all duration-300 ease-out
-                         p-5 sm:p-6 h-[320px] sm:h-[320px] relative"
+                         p-5 sm:p-6 h-full min-h-[320px] relative"
               style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }}
             >
               {/* Icon */}
@@ -194,8 +194,7 @@ export default function Certificates() {
                 </h3>
 
                 <p
-                  className="text-gray-400 text-xs sm:text-sm leading-relaxed line-clamp-4"
-                  style={{ minHeight: "80px" }}
+                  className="text-gray-400 text-xs sm:text-sm leading-relaxed break-words"
                 >
                   {cert.description}
                 </p>
