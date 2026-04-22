@@ -4,6 +4,51 @@ import { Award, Filter } from "lucide-react";
 
 export default function Certificates() {
   const certificates = [
+     {
+      title: "Oceanlab x Charusat Hacks 2026",
+      by: "OceanLab",
+      category: "Hackathon",
+      description:
+        "Built an AI-powered Conversation Intelligence Platform during Oceanlab x Charusat Hacks 2026, generating product insights, employee analytics, and actionable recommendations from call recordings. Led backend and AI pipeline development,and try to include real-time copilot experimentation.",
+      certificateLink:
+        "https://drive.google.com/file/d/1ITz7JO1OAj0My24pZr-QllijgWNQurlq/view?usp=drive_link",
+    },
+        {
+      title: "AWS Cloud Virtual Internship",
+      by: "EduSkills",
+      category: "EduSkills",
+      description:
+        "Completed AWS Cloud Virtual Internship, gaining hands-on experience with cloud fundamentals and core services like EC2, Lambda, and DynamoDB. Learned how to deploy applications, manage resources, and use AWS services in real-world projects",
+      certificateLink:
+        "https://drive.google.com/file/d/1LPt4peMzPNy7mDiHL_Szbd5RqNE8lCha/view?usp=sharing",
+    },
+         {
+      title: "Hack The Tank 3.0,",
+      by: "GDGC SVNIT",
+      category: "Hackathon",
+      description:
+        "Built an AI-based Testimonial Automation Platform during Hack The Tank 3.0, enabling video testimonial collection via shareable links with AI-driven dynamic questioning.IDeveloped backend for AI-led interviews and video recording, with initial implementation of reel generation using highlight extraction and silence removal.",
+      certificateLink:
+        "https://drive.google.com/file/d/1GSWlD_2pdFV8vAQvq0qbPaHXz00uMTit/view?usp=sharing",
+    },
+          {
+      title: "Hack The Winter (The Second Wave)",
+      by: "Graphic Era Hill University",
+      category: "Hackathon",
+      description:
+        "Built SEBN (Smart Emergency Blood Network) during Hack The Winter — a governed platform enabling reliable emergency blood coordination across hospitals, blood banks, and NGOs. Implemented role-based authentication and developed the superadmin module end-to-end (frontend + backend) for access control and system governance.",
+      certificateLink:
+        "https://drive.google.com/file/d/1jbMJZ6wpB8nPd-Tuik7pOLomTZs4bhfJ/view?usp=sharing",
+    },
+            {
+      title: "HackCrux 2026",
+      by: "LNMIT Jaipur",
+      category: "Hackathon",
+      description:"Built an AI-powered Sales Conversation Intelligence Platform during Hackcrux 2026, enabling businesses to extract insights from sales and service call recordings.Developed and AI analysis pipelines to generate call insights, performance feedback, and actionable recommendations for improving future conversations.",
+      certificateLink:
+        "https://drive.google.com/file/d/1f1-P06spFUSWPR1X8hDJJFhYbSoViBQ9/view?usp=drive_link",
+    },
+
     {
       title: "Google Cloud Generative AI Virtual Internship",
       by: "EduSkills",
@@ -16,7 +61,7 @@ export default function Certificates() {
     {
       title: "Odoo Hackathon 2025 – Final Round Participant",
       by: "Odoo",
-      category: "Odoo",
+      category: "Hackathon",
       description:
         "Participated in Odoo’s global hackathon challenge, developing innovative business solutions using the Odoo framework. Gained practical experience in UI/UX and ERP customization through teamwork and problem-solving.",
       certificateLink:
@@ -106,7 +151,7 @@ export default function Certificates() {
   ];
 
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const categories = ["All", "Simplilearn", "HackerRank", "Odoo", "EduSkills"];
+  const categories = ["All", "Simplilearn", "HackerRank" , "EduSkills","Hackathon"];
 
   const filteredCertificates =
     selectedCategory === "All"
@@ -165,7 +210,7 @@ export default function Certificates() {
         {filteredCertificates.map((cert, index) => (
           <div
             key={index}
-            className="w-full max-w-[360px] sm:max-w-[340px] h-full"
+            className="w-full max-w-[440px] sm:max-w-[420px] h-full"
           >
             <div
               className="flex flex-col justify-between bg-[#101828]/90 rounded-2xl w-full 
@@ -181,7 +226,7 @@ export default function Certificates() {
               </div>
 
               {/* Content */}
-              <div className="flex-grow pr-6 sm:pr-10">
+              <div className="flex-grow pr-6 sm:pr-5">
                 <h2
                   className="text-xl sm:text-2xl font-bold text-[#F59E0B] mb-2 line-clamp-2 leading-tight"
                   style={{ minHeight: "48px" }}
