@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion,AnimatePresence } from "framer-motion";
-import { Github, ExternalLink, Filter, X, ChevronLeft, ChevronRight, Zap, Database, Code, Palette, Server, Cpu } from "lucide-react";
+import { Github, ExternalLink, Filter, X, ChevronLeft, ChevronRight, Zap, Database, Code, Palette, Server, Cpu, Lock } from "lucide-react";
 import TiltedCard from "../../Components/Design/TitleCard.jsx";
 import "./project.css";
 
@@ -28,6 +28,10 @@ const projects = [
   title: "VedantAttendance – Attendance Management System",
   role: "Full-Stack Developer",
   contributor: "Freelance Project",
+  projectType: "Freelance",
+  isPrivate: true,
+  privacyMessage:
+    "🔒 This project was developed for a client. Source code is not publicly available due to confidentiality.",
   description:
     "Built an attendance management system with face recognition and location-based tracking, ensuring secure authentication and consistent data across the full stack.",
   
@@ -81,7 +85,7 @@ techReasoning: {
   video: "https://www.youtube.com/embed/9uFTvudhtzo?si=VOyvsW5PWA-Gq5LF" ,
   img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1776970995/ChatGPT_Image_Apr_23_2026_05_47_47_PM_l7jqzj.png",
   github: "https://github.com/JatinRajvani/VedantAttendance_Documentation",
-  live: "",
+  live: null,
 
   category: "Fullstack",
 
@@ -849,6 +853,11 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeTab, setActiveTab] = useState("Project Details");
+  const isPrivateProject = Boolean(selectedProject?.isPrivate);
+  const hasLiveDemo = Boolean(selectedProject?.live);
+  const hasCodeLink = Boolean(selectedProject?.github);
+  const codeButtonLabel = isPrivateProject ? "Case Study" : "View Source Code";
+  const privateProjectMessage = selectedProject?.privacyMessage || "🔒 This project was developed for a client. Source code is not publicly available due to confidentiality.";
 
   const filteredProjects =
     selectedCategory === "All"
@@ -1009,7 +1018,7 @@ export default function Projects() {
                         className="flex-1 bg-gray-700/50 text-white px-3 py-2.5 rounded-lg font-semibold hover:bg-gray-600 hover:border-[#F59E0B]/40 hover:shadow-md transition-all flex items-center justify-center gap-1 text-sm border border-gray-600/50 group/btn"
                       >
                         <Github className="w-4 h-4 group-hover/btn:text-[#F59E0B] transition-colors" />
-                        Code
+                        {project.isPrivate ? "Case Study" : "Code"}
                       </a>
                     </div>
                   </div>
@@ -1084,7 +1093,7 @@ export default function Projects() {
                         className="flex-1 bg-gray-700/50 text-white px-3 py-2.5 rounded-lg font-semibold hover:bg-gray-600 hover:border-[#F59E0B]/40 hover:shadow-md transition-all flex items-center justify-center gap-1 text-sm border border-gray-600/50 group/btn"
                       >
                         <Github className="w-4 h-4 group-hover/btn:text-[#F59E0B] transition-colors" />
-                        Code
+                        {project.isPrivate ? "Case Study" : "Code"}
                       </a>
                     </div>
                   </div>
@@ -1205,29 +1214,58 @@ export default function Projects() {
 
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={selectedProject.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:shadow-lg hover:shadow-[#F59E0B]/40 transition-all text-sm sm:text-base"
-                >
-                  <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
-                  View Live Project
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={selectedProject.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-gray-700/80 backdrop-blur-sm text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gray-600 border border-gray-600/50 transition-all text-sm sm:text-base"
-                >
-                  <Github className="w-4 h-4 sm:w-5 sm:h-5" />
-                  View Source Code
-                </motion.a>
+                {hasLiveDemo ? (
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={selectedProject.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#F59E0B] to-[#D97706] text-black font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:shadow-lg hover:shadow-[#F59E0B]/40 transition-all text-sm sm:text-base"
+                  >
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                    View Live Project
+                  </motion.a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    className="flex-1 flex items-center justify-center gap-2 bg-gray-700/40 text-gray-300 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg border border-gray-600/40 cursor-not-allowed text-sm sm:text-base"
+                  >
+                    <Lock className="w-4 h-4 sm:w-5 sm:h-5" />
+                    Live Demo Unavailable
+                  </button>
+                )}
+
+                {hasCodeLink ? (
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 bg-gray-700/80 backdrop-blur-sm text-white font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gray-600 border border-gray-600/50 transition-all text-sm sm:text-base"
+                  >
+                    <Github className="w-4 h-4 sm:w-5 sm:h-5" />
+                    {codeButtonLabel}
+                  </motion.a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled
+                    className="flex-1 flex items-center justify-center gap-2 bg-gray-700/40 text-gray-300 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg border border-gray-600/40 cursor-not-allowed text-sm sm:text-base"
+                  >
+                    <Lock className="w-4 h-4 sm:w-5 sm:h-5" />
+                    Code Unavailable
+                  </button>
+                )}
               </div>
+
+              {isPrivateProject && (
+                <div className="rounded-lg border border-amber-400/30 bg-amber-500/10 px-3 py-2 text-xs sm:text-sm text-amber-100 leading-relaxed">
+                  {privateProjectMessage}
+                </div>
+              )}
             </div>
 
             {/* Right */}
