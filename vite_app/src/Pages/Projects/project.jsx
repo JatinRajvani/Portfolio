@@ -23,10 +23,11 @@ const techIcons = {
 };
 
 const projects = [ 
+
 {
   title: "VedantAttendance – Attendance Management System",
   role: "Full-Stack Developer",
-  contributor: "Solo Project",
+  contributor: "Freelance Project",
   description:
     "Built an attendance management system with face recognition and location-based tracking, ensuring secure authentication and consistent data across the full stack.",
   
@@ -77,9 +78,9 @@ techReasoning: {
 
   tech: ["MERN Stack", "Python", "AWS"],
 
-  video: "https://drive.google.com/file/d/1aMLEev9G6izH5rhYt2PdYTDhiZaz9wR6/preview" ,
-  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/c_crop,w_1200,h_675/v1769357403/clipboard-image-1769357253_ixhadt.png",
-  github: "",
+  video: "https://www.youtube.com/embed/9uFTvudhtzo?si=VOyvsW5PWA-Gq5LF" ,
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1776970995/ChatGPT_Image_Apr_23_2026_05_47_47_PM_l7jqzj.png",
+  github: "https://github.com/JatinRajvani/VedantAttendance_Documentation",
   live: "",
 
   category: "Fullstack",
@@ -115,6 +116,93 @@ features: [
   status: "Completed"
 }
 ,
+{
+  title: "SalesIQ (AI Conversation Intelligence & Action Platform)",
+  role: "Full-Stack Developer",
+  contributor: "Team Project",
+
+  description:
+    "Built an AI-powered SaaS platform that transforms customer conversations into actionable business intelligence. The system analyzes sales and support calls to generate insights, recommended actions, and performance analytics across teams.",
+
+  problem:
+    "In most organizations, thousands of customer conversations happen daily, but valuable insights like buying intent, objections, and feedback remain hidden in recordings. Sales teams miss follow-ups, managers lack visibility, and product teams lose real customer insights, leading to poor decision-making.",
+
+  yourContribution:
+    "I primarily worked on the backend development of the Call Analysis system, where I designed APIs and integrated the AI pipeline for processing uploaded call recordings. This included handling transcription and extracting key insights such as objections, sentiment, and buying signals.I also implemented JWT-based authentication and built role-based access control, creating separate workflows for Admin and Employee roles within a company-based SaaS architecture. Additionally, I contributed to structuring the data layer using MongoDB to support efficient storage of conversations and insights.",
+
+  solution:
+    "SalesIQ provides a centralized, company-based workspace where teams can upload call recordings and leverage AI to automatically analyze conversations. The system extracts key insights such as objections, buying signals, and sentiment, and converts them into actionable outputs like follow-up recommendations, risk alerts, and coaching suggestions. It also aggregates data into product-level and employee-level intelligence dashboards, enabling organizations to make data-driven decisions and improve performance.",
+
+  achievements: [
+    "Transformed raw conversation data into structured insights and actionable recommendations using AI.",
+    "Designed a multi-layer intelligence system (Call, Action, Product, Employee) for deep analytics.",
+    "Enabled scalable multi-tenant SaaS architecture with company-level data isolation.",
+    "Built an end-to-end system integrating AI processing, dashboards, and role-based workflows."
+  ],
+
+  techReasoning: {
+    "React": "Used to build dynamic dashboards for insights, analytics, and user interaction",
+    "Redux Toolkit": "Managed global state for user data, insights, and dashboard updates",
+    "Node.js + Express": "Handled APIs, business logic, and AI pipeline integration",
+    "MongoDB": "Stored conversations, insights, actions, and analytics in a scalable structure",
+    "JWT Authentication": "Ensured secure and role-based access control for Admins and Employees",
+    "AI APIs (Whisper / GPT)": "Used for transcription, summarization, and intelligent insight extraction",
+    "Vercel": "Deployed frontend for fast and reliable access",
+    "Render / Cloud Backend": "Deployed backend services and APIs"
+  },
+
+  briefdescription:
+    "SalesIQ is a full-stack AI SaaS platform that converts customer conversations into insights, actions, and business intelligence. It helps organizations improve decision-making, sales performance, and product strategy through data-driven insights.",
+
+  techindetails: [
+    "React",
+    "CSS",
+    "Redux Toolkit",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT Authentication",
+    "OpenAI APIs"
+  ],
+
+  tech: ["MERN Stack", "AI", "Cloud"],
+
+  video: "https://www.youtube.com/embed/1Z_e55m19fE?si=LPN-dWwHELtc7-be", 
+  img: "https://res.cloudinary.com/doqzxuxb1/image/upload/v1776970995/ChatGPT_Image_Apr_23_2026_04_20_33_PM_wskclp.png",
+  github: "https://github.com/JatinRajvani/DreamBuilders_Charusat",
+  live: "https://dream-builders-charusat.vercel.app/",
+
+  category: "Fullstack",
+
+  features: [
+    {
+      role: "👨‍💼 Admin",
+      items: [
+        "Create and manage company workspace",
+        "View company-wide analytics and dashboards",
+        "Track employee performance and call insights",
+        "Monitor product-level feedback and trends",
+        "Identify risks and optimize team performance"
+      ]
+    },
+    {
+      role: "👩‍💻 Employee",
+      items: [
+        "Upload and analyze call recordings",
+        "View AI-generated insights (objections, sentiment, signals)",
+        "Receive follow-up recommendations and next actions",
+        "Track personal performance metrics",
+        "Access coaching suggestions for improvement"
+      ]
+    }
+  ],
+
+  startDate: "March 2026",
+  endDate: "April 2026",
+  duration: "20 Days",
+  teamSize: "Team Project",
+  status: "In Progress"
+},
 {
   title: "SEBN – Smart Emergency Blood Network",
   role: "Admin Module Developer",
